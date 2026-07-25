@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en"><head><style id="qw-theme">:root {
+<html><head><style id="qw-theme">:root {
   --color-bg: #faf9fc;
   --color-text: #131920;
   --color-navbar-bg: #f9f9fb;
   --color-bg-chat-view: #fcfcfd;
-  --color-bg-secondary: #ffffff;
+  --color-bg-secondary: #fff;
   --color-bg-tertiary: #f9fafb;
   --color-bg-hover: #f3f4f6;
   --color-surface: #f9fafb;
   --color-surface-hover: #f3f4f6;
   --color-surface-active: #e5e7eb;
-  --color-border: rgba(0, 0, 0, .12);
-  --color-border-light: rgba(0, 0, 0, .06);
+  --color-border: #0000001f;
+  --color-border-light: #0000000f;
   --color-border-strong: #d1d5db;
   --color-primary: #4200db;
   --color-primary-dark: #35009e;
@@ -35,20 +35,24 @@
   --color-primary-border: color-mix(in srgb, #4200db 30%, transparent);
   --color-focus-ring: color-mix(in srgb, #4200db 50%, transparent);
   --color-sidebar-hover: color-mix(in srgb, #4200db 12%, transparent);
+  --block-hover-outline: 1px dashed color-mix(in srgb, #4200db 50%, transparent);
+  --block-selected-outline: 1px solid #8575ff;
+  --block-selection-outline-offset: 2px;
+  --block-selected-halo: 0 0 8px color-mix(in srgb, #4200db 40%, transparent);
   --color-accent: #4200db;
   --color-accent-foreground: #4200db;
   --color-accent-dark: #35009e;
   --color-accent-light: #e8e6ff;
-  --color-accent-inverse: #ffffff;
+  --color-accent-inverse: #fff;
   --color-link: #4200db;
   --color-primary-gradient-end: #e8e6ff;
   --color-primary-bg-solid: #e8e6ff;
-  --color-user-bubble: #F3F3F7;
+  --color-user-bubble: #f3f3f7;
   --color-user-bubble-text: #131920;
   --color-text-secondary: #5e5e5e;
   --color-text-tertiary: #656871;
   --color-text-muted: #9ca3af;
-  --color-text-on-primary: #ffffff;
+  --color-text-on-primary: #fff;
   --color-success: #00802f;
   --color-success-dark: #00471e;
   --color-success-light: #d9ffd6;
@@ -67,7 +71,7 @@
   --color-error-active-border: #db0000;
   --color-error-foreground: #db0000;
   --color-error-dark-foreground: #700000;
-  --color-error-inverse: #ffffff;
+  --color-error-inverse: #fff;
   --color-error-text: #700000;
   --color-warning: #f2b100;
   --color-warning-dark: #573a00;
@@ -88,20 +92,20 @@
   --color-info-border: #b3d1f0;
   --color-info-foreground: #006ce0;
   --color-info-dark-foreground: #002a66;
-  --color-info-inverse: #ffffff;
-  --color-overlay: rgba(0, 0, 0, .5);
-  --color-shadow: rgba(0, 0, 0, .08);
-  --color-hover: rgba(0, 0, 0, .05);
-  --color-tooltip-bg: rgba(0, 0, 0, .85);
-  --color-tooltip-text: #ffffff;
+  --color-info-inverse: #fff;
+  --color-overlay: #00000080;
+  --color-shadow: #00000014;
+  --color-hover: #0000000d;
+  --color-tooltip-bg: #000000d9;
+  --color-tooltip-text: #fff;
   --color-voice-purple: #8575ff;
   --color-voice-purple-dark: #4200db;
   --color-voice-purple-light: #8575ff;
   --color-voice-red: #db0000;
   --color-voice-red-dark: #700000;
   --color-voice-amber: #f2b100;
-  --color-voice-purple-glow: rgba(66, 0, 219, .4);
-  --color-voice-red-glow: rgba(219, 0, 0, .4);
+  --color-voice-purple-glow: #4200db66;
+  --color-voice-red-glow: #db000066;
   --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
   --text-2xs: .5625rem;
@@ -131,8 +135,8 @@
   --radius-card: 12px;
   --radius-lg: 16px;
   --radius-pill: 8px;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .05);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, .08);
+  --shadow-sm: 0 1px 2px #0000000d;
+  --shadow-md: 0 4px 12px #00000014;
   --color-success-bg-solid: #d9ffd6;
   --color-error-bg-solid: #ffe0e0;
   --color-error-border-solid: #ffe0e0;
@@ -144,62 +148,62 @@
   --color-info-text-alt: #002a66;
   --color-emerald: #10b981;
   --color-teal: #4ecdc4;
-  --color-code-bg: #F3F3F7;
+  --color-code-bg: #f3f3f7;
   --color-code-header-bg: #f1f3f5;
   --color-code-text: #24292e;
   --color-code-border: #e1e4e8;
   --color-code-muted: #6a737d;
-  --color-inline-code-bg: #F3F3F7;
+  --color-inline-code-bg: #f3f3f7;
   --color-inline-code-text: #24292e;
   --color-inline-code-border: #e1e4e8;
   --color-scrollbar-thumb: #d1d5db;
   --color-scrollbar-track: transparent;
-  --color-graph-node-text: #333333;
-  --color-graph-node-text-dim: #7F8C8D;
-  --color-graph-edge-default: #95A5A6;
-  --color-graph-edge-cross: #E67E22;
-  --color-graph-edge-text: #666666;
-  --color-graph-edge-stroke: #ffffff;
-  --color-graph-highlight-bg: #FF6B6B;
-  --color-graph-highlight-border: #E74C3C;
-  --color-graph-search-bg: #FFD700;
-  --color-graph-search-border: #FFA500;
-  --color-graph-focus-border: #C0392B;
-  --color-graph-external-border: #95A5A6;
-  --color-graph-cat-file: #3498DB;
-  --color-graph-cat-folder: #7F8C8D;
-  --color-graph-cat-file-aggregate: #2980B9;
-  --color-graph-cat-class: #9B59B6;
-  --color-graph-cat-function: #2ECC71;
-  --color-graph-cat-method: #1ABC9C;
-  --color-graph-cat-variable: #F39C12;
-  --color-graph-cat-import: #D35400;
-  --color-graph-cat-module: #5B6ABF;
-  --color-graph-cat-concept: #E74C3C;
-  --color-graph-cat-person: #FF6B6B;
-  --color-graph-cat-org: #4ECDC4;
-  --color-graph-cat-organization: #4ECDC4;
-  --color-graph-cat-product: #A29BFE;
-  --color-graph-cat-metric: #FD79A8;
-  --color-graph-cat-location: #34495E;
-  --color-graph-cat-date: #E056A0;
-  --color-graph-cat-code: #3498DB;
-  --color-graph-cat-doc: #7F8C8D;
-  --color-graph-cat-url: #00B894;
-  --color-graph-cat-email: #6C5CE7;
-  --color-graph-cat-unknown: #BDC3C7;
-  --color-graph-rel-contains: #BDC3C7;
-  --color-graph-rel-extends: #9B59B6;
-  --color-graph-rel-implements: #3498DB;
-  --color-graph-rel-imports: #E67E22;
-  --color-graph-rel-uses: #2ECC71;
-  --color-graph-rel-calls: #27AE60;
-  --color-graph-rel-references: #F39C12;
-  --color-graph-rel-related-to: #95A5A6;
-  --color-graph-rel-works-on: #E74C3C;
-  --color-graph-rel-owns: #1ABC9C;
-  --color-graph-rel-depends-on: #E67E22;
-  --color-graph-rel-parent-of: #BDC3C7;
+  --color-graph-node-text: #333;
+  --color-graph-node-text-dim: #7f8c8d;
+  --color-graph-edge-default: #95a5a6;
+  --color-graph-edge-cross: #e67e22;
+  --color-graph-edge-text: #666;
+  --color-graph-edge-stroke: #fff;
+  --color-graph-highlight-bg: #ff6b6b;
+  --color-graph-highlight-border: #e74c3c;
+  --color-graph-search-bg: gold;
+  --color-graph-search-border: orange;
+  --color-graph-focus-border: #c0392b;
+  --color-graph-external-border: #95a5a6;
+  --color-graph-cat-file: #3498db;
+  --color-graph-cat-folder: #7f8c8d;
+  --color-graph-cat-file-aggregate: #2980b9;
+  --color-graph-cat-class: #9b59b6;
+  --color-graph-cat-function: #2ecc71;
+  --color-graph-cat-method: #1abc9c;
+  --color-graph-cat-variable: #f39c12;
+  --color-graph-cat-import: #d35400;
+  --color-graph-cat-module: #5b6abf;
+  --color-graph-cat-concept: #e74c3c;
+  --color-graph-cat-person: #ff6b6b;
+  --color-graph-cat-org: #4ecdc4;
+  --color-graph-cat-organization: #4ecdc4;
+  --color-graph-cat-product: #a29bfe;
+  --color-graph-cat-metric: #fd79a8;
+  --color-graph-cat-location: #34495e;
+  --color-graph-cat-date: #e056a0;
+  --color-graph-cat-code: #3498db;
+  --color-graph-cat-doc: #7f8c8d;
+  --color-graph-cat-url: #00b894;
+  --color-graph-cat-email: #6c5ce7;
+  --color-graph-cat-unknown: #bdc3c7;
+  --color-graph-rel-contains: #bdc3c7;
+  --color-graph-rel-extends: #9b59b6;
+  --color-graph-rel-implements: #3498db;
+  --color-graph-rel-imports: #e67e22;
+  --color-graph-rel-uses: #2ecc71;
+  --color-graph-rel-calls: #27ae60;
+  --color-graph-rel-references: #f39c12;
+  --color-graph-rel-related-to: #95a5a6;
+  --color-graph-rel-works-on: #e74c3c;
+  --color-graph-rel-owns: #1abc9c;
+  --color-graph-rel-depends-on: #e67e22;
+  --color-graph-rel-parent-of: #bdc3c7;
   --qs-content: #fff;
   --qs-main: #fff;
   --qs-primary-foreground: #131920;
@@ -218,6 +222,10 @@
   --qs-success-default: #00802f;
   --qs-error-default: #db0000;
   --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --safe-top: 0px;
+  --safe-bottom: 0px;
+  --safe-left: 0px;
+  --safe-right: 0px;
   --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
   --qs-font-base-letter-spacing: .15px;
   --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
@@ -326,8 +334,8 @@
   --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
   --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
   --react-pdf-text-layer: 1;
-  --highlight-bg-color: rgba(180, 0, 170, 1);
-  --highlight-selected-bg-color: rgba(0, 100, 0, 1);
+  --highlight-bg-color: #b400aa;
+  --highlight-selected-bg-color: #006400;
   --react-pdf-annotation-layer: 1;
   --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
   --input-focus-border-color: Highlight;
@@ -345,664 +353,173 @@ a { color: var(--color-link, var(--color-primary)); }</style>
 <title>Team Neha Dashboard</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', -apple-system, sans-serif; background: #1a1410; color: #e8ddd0; min-height: 100vh; }
-
-/* Sidebar */
-.sidebar {
-  position: fixed; left: 0; top: 0; bottom: 0; width: 250px;
-  background: linear-gradient(180deg, #211a12 0%, #1a1410 100%);
-  border-right: 1px solid #3a2e20;
-  display: flex; flex-direction: column; z-index: 100;
-}
-.sidebar-brand {
-  padding: 20px 20px 16px;
-  border-bottom: 1px solid #3a2e20;
-}
-.sidebar-brand-icon {
-  width: 40px; height: 40px; border-radius: 10px;
-  background: linear-gradient(135deg, #f5a623, #e65100);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 18px; color: #fff; margin-bottom: 12px;
-  box-shadow: 0 4px 12px rgba(245,166,35,0.3);
-}
-.sidebar-brand-name { font-size: 15px; font-weight: 700; color: #fff; }
-.sidebar-brand-sub { font-size: 11px; color: #8a7560; margin-top: 2px; }
-.nav-menu { padding: 12px 0; flex: 1; }
-.nav-item {
-  display: flex; align-items: center; gap: 12px;
-  padding: 11px 20px; margin: 2px 8px; cursor: pointer; font-size: 13px;
-  color: #8a7560; transition: all 0.2s; border-radius: 8px;
-}
-.nav-item:hover { color: #e8ddd0; background: rgba(245, 166, 35, 0.06); }
-.nav-item.active {
-  color: #f5a623; background: rgba(245, 166, 35, 0.1);
-  box-shadow: 0 0 0 1px rgba(245,166,35,0.15);
-}
-.nav-item i { width: 18px; text-align: center; font-size: 14px; }
-.sidebar-footer {
-  padding: 14px 20px; border-top: 1px solid #3a2e20;
-  font-size: 10px; color: #5a4a38;
-}
-.sidebar-clock {
-  font-size: 13px; font-weight: 600; color: #f5a623; margin-bottom: 4px;
-  font-family: 'SF Mono', Consolas, monospace;
-}
-.sidebar-date { font-size: 11px; color: #8a7560; }
-
-/* Main Content */
-.main { margin-left: 250px; padding: 24px 28px; }
-
-/* Page Header Banner */
-.page-banner {
-  background: linear-gradient(135deg, #2d2218 0%, #1a1410 100%);
-  border: 1px solid #3a2e20; border-radius: 14px;
-  padding: 20px 24px; margin-bottom: 24px;
-  display: flex; justify-content: space-between; align-items: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-}
-.page-banner-left { display: flex; align-items: center; gap: 14px; }
-.page-banner-icon {
-  width: 44px; height: 44px; border-radius: 12px;
-  background: rgba(245,166,35,0.12); display: flex; align-items: center;
-  justify-content: center; font-size: 20px; color: #f5a623;
-}
-.page-banner-title { font-size: 20px; font-weight: 700; color: #fff; }
-.page-banner-sub { font-size: 12px; color: #8a7560; margin-top: 2px; }
-.page-banner-right { text-align: right; }
-.page-banner-stat { font-size: 22px; font-weight: 800; color: #f5a623; }
-.page-banner-stat-label { font-size: 10px; color: #8a7560; text-transform: uppercase; letter-spacing: 0.5px; }
-
-/* KPI Cards */
-.kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 24px; }
-.kpi-card {
-  background: #211a12; border: 1px solid #3a2e20; border-radius: 12px;
-  padding: 18px; position: relative; overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.kpi-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
-.kpi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
-.kpi-card.gold::before { background: linear-gradient(90deg, #f5a623, #ffcc02); }
-.kpi-card.green::before { background: linear-gradient(90deg, #66bb6a, #43a047); }
-.kpi-card.orange::before { background: linear-gradient(90deg, #ff8f00, #e65100); }
-.kpi-card.red::before { background: linear-gradient(90deg, #ef5350, #c62828); }
-.kpi-icon { font-size: 18px; margin-bottom: 10px; opacity: 0.9; }
-.kpi-card.gold .kpi-icon { color: #f5a623; }
-.kpi-card.green .kpi-icon { color: #66bb6a; }
-.kpi-card.orange .kpi-icon { color: #ff8f00; }
-.kpi-card.red .kpi-icon { color: #ef5350; }
-.kpi-value { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 2px; }
-.kpi-label { font-size: 10px; color: #8a7560; text-transform: uppercase; letter-spacing: 0.8px; }
-
-/* Table */
-.table-container {
-  background: #211a12; border: 1px solid #3a2e20; border-radius: 12px; overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-}
-.table-header {
-  padding: 14px 20px; border-bottom: 1px solid #3a2e20;
-  display: flex; justify-content: space-between; align-items: center;
-}
-.table-title { font-size: 13px; font-weight: 600; color: #fff; }
-.table-badge {
-  font-size: 10px; background: rgba(245,166,35,0.1); color: #f5a623;
-  padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(245,166,35,0.2);
-}
-table { width: 100%; border-collapse: collapse; }
-th {
-  text-align: left; padding: 10px 18px; font-size: 10px;
-  color: #f5a623; text-transform: uppercase; letter-spacing: 0.5px;
-  border-bottom: 1px solid #3a2e20; font-weight: 600;
-}
-td { padding: 10px 18px; font-size: 12px; border-bottom: 1px solid #2a2018; color: #d4c4b0; }
-tr:hover td { background: rgba(245, 166, 35, 0.03); }
-.status {
-  display: inline-flex; align-items: center; gap: 4px;
-  padding: 3px 10px; border-radius: 20px;
-  font-size: 10px; font-weight: 600;
-}
-.status-present { background: rgba(102,187,106,0.12); color: #66bb6a; border: 1px solid rgba(102,187,106,0.25); }
-.status-leave { background: rgba(255,143,0,0.12); color: #ff8f00; border: 1px solid rgba(255,143,0,0.25); }
-.status-absent { background: rgba(239,83,80,0.12); color: #ef5350; border: 1px solid rgba(239,83,80,0.25); }
-.status-approved { background: rgba(102,187,106,0.12); color: #66bb6a; border: 1px solid rgba(102,187,106,0.25); }
-.status-pending { background: rgba(255,143,0,0.12); color: #ff8f00; border: 1px solid rgba(255,143,0,0.25); }
-.status-taken { background: rgba(245,166,35,0.1); color: #f5a623; border: 1px solid rgba(245,166,35,0.2); }
-
-/* Shift color tags */
-.shift-2pm { background: rgba(79,195,247,0.12); color: #4fc3f7; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
-.shift-5pm { background: rgba(245,166,35,0.12); color: #f5a623; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
-.shift-9pm { background: rgba(171,71,188,0.12); color: #ce93d8; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600; }
-
-/* OT Bar */
-.ot-bar-container { display: flex; align-items: center; gap: 8px; }
-.ot-bar { width: 70px; height: 5px; background: #3a2e20; border-radius: 3px; overflow: hidden; }
-.ot-bar-fill { height: 100%; border-radius: 3px; }
-.ot-bar-fill.high { background: linear-gradient(90deg, #ef5350, #c62828); }
-.ot-bar-fill.medium { background: linear-gradient(90deg, #ff8f00, #e65100); }
-.ot-bar-fill.low { background: linear-gradient(90deg, #66bb6a, #43a047); }
-
-/* Section visibility */
-.section { display: none; }
-.section.active { display: block; }
-
-/* FORM STYLES */
-.form-container {
-  background: #211a12; border: 1px solid #3a2e20; border-radius: 12px;
-  padding: 20px; margin-bottom: 20px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-}
-.form-title {
-  font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 14px;
-  display: flex; align-items: center; gap: 8px;
-}
-.form-title i { color: #f5a623; font-size: 14px; }
-.form-row {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 12px; margin-bottom: 12px;
-}
-.form-group { display: flex; flex-direction: column; gap: 5px; }
-.form-group label {
-  font-size: 10px; color: #8a7560; text-transform: uppercase;
-  letter-spacing: 0.5px; font-weight: 600;
-}
-.form-group input, .form-group select {
-  background: #1a1410; border: 1px solid #3a2e20; border-radius: 8px;
-  padding: 9px 12px; color: #e8ddd0; font-size: 12px;
-  font-family: 'Segoe UI', sans-serif; transition: all 0.2s;
-}
-.form-group input:focus, .form-group select:focus {
-  outline: none; border-color: #f5a623; box-shadow: 0 0 0 3px rgba(245,166,35,0.1);
-}
-.form-group select { cursor: pointer; }
-.form-group input[type="time"] { color-scheme: dark; }
-.form-group input[type="time"]::-webkit-calendar-picker-indicator { filter: invert(70%) sepia(90%) saturate(500%) hue-rotate(0deg) brightness(100%); cursor: pointer; }
-.form-group input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(70%) sepia(90%) saturate(500%) hue-rotate(0deg) brightness(100%); cursor: pointer; }
-.btn-submit {
-  background: linear-gradient(135deg, #f5a623, #e65100); border: none;
-  color: #fff; padding: 9px 20px; border-radius: 8px; font-size: 12px;
-  font-weight: 700; cursor: pointer; transition: all 0.2s; margin-top: 4px;
-  box-shadow: 0 4px 12px rgba(245,166,35,0.2);
-}
-.btn-submit:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(245,166,35,0.35); }
-.success-msg {
-  display: none; padding: 8px 14px; background: rgba(102,187,106,0.08);
-  border: 1px solid rgba(102,187,106,0.2); border-radius: 8px;
-  color: #66bb6a; font-size: 11px; margin-top: 10px; align-items: center; gap: 6px;
-}
-.success-msg.show { display: flex; }
-.del-btn { background: none; border: none; color: #ef5350; cursor: pointer; font-size: 13px; opacity: 0.6; transition: opacity 0.2s; }
-.del-btn:hover { opacity: 1; }
-
-/* Summary Chart */
-.summary-bar { display: flex; height: 8px; border-radius: 4px; overflow: hidden; margin-top: 12px; background: #3a2e20; }
-.summary-bar-fill { height: 100%; transition: width 0.3s; }
-
-/* Light Mode */
-body.light { background: #f5f0ea; color: #2c2018; }
-body.light .sidebar { background: linear-gradient(180deg, #fff 0%, #f9f5ef 100%); border-right-color: #e0d5c8; }
-body.light .sidebar-brand { border-bottom-color: #e0d5c8; }
-body.light .sidebar-brand-name { color: #2c2018; }
-body.light .nav-item { color: #8a7560; }
-body.light .nav-item.active { color: #e65100; background: rgba(230,81,0,0.06); box-shadow: 0 0 0 1px rgba(230,81,0,0.1); }
-body.light .nav-item:hover { color: #2c2018; background: rgba(230,81,0,0.04); }
-body.light .sidebar-footer { border-top-color: #e0d5c8; }
-body.light .sidebar-clock { color: #e65100; }
-body.light .page-banner { background: linear-gradient(135deg, #fff 0%, #f9f5ef 100%); border-color: #e0d5c8; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-body.light .page-banner-title { color: #2c2018; }
-body.light .kpi-card { background: #fff; border-color: #e0d5c8; }
-body.light .kpi-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
-body.light .kpi-value { color: #2c2018; }
-body.light .table-container { background: #fff; border-color: #e0d5c8; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
-body.light .table-header { border-bottom-color: #e0d5c8; }
-body.light .table-title { color: #2c2018; }
-body.light th { color: #e65100; border-bottom-color: #e0d5c8; }
-body.light td { color: #4a3828; border-bottom-color: #f0e8de; }
-body.light tr:hover td { background: rgba(230,81,0,0.02); }
-body.light .form-container { background: #fff; border-color: #e0d5c8; }
-body.light .form-title { color: #2c2018; }
-body.light .form-group input, body.light .form-group select { background: #f9f5ef; border-color: #e0d5c8; color: #2c2018; }
-body.light .form-group input:focus, body.light .form-group select:focus { border-color: #e65100; box-shadow: 0 0 0 3px rgba(230,81,0,0.08); }
-body.light #theme-toggle { background: #fff; border-color: #e0d5c8; color: #4a3828; }
-body.light .search-box { background: #f9f5ef; border-color: #e0d5c8; color: #2c2018; }
-body.light .summary-bar { background: #e0d5c8; }
-
-/* Search box */
-.search-box {
-  width: 100%; padding: 8px 12px 8px 32px; border-radius: 8px;
-  border: 1px solid #3a2e20; background: #1a1410; color: #e8ddd0;
-  font-size: 12px; margin-bottom: 12px; transition: all 0.2s;
-}
-.search-box:focus { outline: none; border-color: #f5a623; box-shadow: 0 0 0 3px rgba(245,166,35,0.1); }
-.search-wrapper { position: relative; }
-.search-wrapper i { position: absolute; left: 10px; top: 9px; font-size: 12px; color: #8a7560; }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .sidebar { width: 60px; }
-  .sidebar-brand-name, .sidebar-brand-sub, .nav-item span, .sidebar-footer, .sidebar-clock, .sidebar-date { display: none; }
-  .nav-item { justify-content: center; padding: 12px; margin: 2px 4px; }
-  .main { margin-left: 60px; padding: 16px 12px; }
-  .kpi-row { grid-template-columns: repeat(2, 1fr); }
-  .form-row { grid-template-columns: 1fr; }
-  .page-banner { flex-direction: column; gap: 12px; text-align: center; }
-}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg-main:#1a1208;--bg-sidebar:#1a1208;--bg-card:#2a1e12;--bg-input:#2a1e12;--text-primary:#f0e8d8;--text-secondary:#e8a020;--text-muted:#c88820;--accent:#e8a020;--accent-light:#f0b840;--border:#3a2c1c;--green:#e8a020;--orange:#e8a020;--red:#e85040;--yellow:#e8a020;--card-shadow:0 2px 8px rgba(0,0,0,0.4)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg-main);color:var(--text-primary);display:flex;min-height:100vh}
+body.light{--bg-main:#f8f4ec;--bg-sidebar:#1a1208;--bg-card:#ffffff;--bg-input:#f0ebe3;--text-primary:#1a1208;--text-secondary:#6b5a40;--text-muted:#9a8060;--border:#e0d5c8;--card-shadow:0 2px 8px rgba(0,0,0,0.08)}
+body.light .sidebar{--text-primary:#f0e8d8;--text-secondary:#c8a870;--text-muted:#8a7050}
+.sidebar{width:260px;background:var(--bg-sidebar);padding:24px 16px;display:flex;flex-direction:column;border-right:1px solid var(--border);position:fixed;height:100vh;overflow-y:auto}
+.sidebar-logo{width:44px;height:44px;background:var(--accent);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}
+.sidebar-title{font-size:16px;font-weight:700;color:var(--text-primary);margin-bottom:2px}
+.sidebar-sub{font-size:12px;color:var(--text-muted);margin-bottom:20px}
+.theme-toggle{width:100%;padding:8px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);cursor:pointer;font-size:13px;margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:8px}
+.theme-toggle:hover{background:rgba(232,168,56,0.1)}
+.nav-items{display:flex;flex-direction:column;gap:4px;flex:1}
+.nav-item{padding:12px 16px;border-radius:10px;cursor:pointer;color:var(--text-secondary);font-size:14px;font-weight:500;display:flex;align-items:center;gap:12px;transition:all 0.15s}
+.nav-item:hover{color:var(--text-primary);background:rgba(232,168,56,0.08)}
+.nav-item.active{color:var(--accent);background:rgba(232,168,56,0.12);font-weight:600}
+.nav-item i{width:20px;text-align:center;font-size:16px}
+.sidebar-clock{margin-top:auto;padding-top:20px}
+.clock-time{font-size:14px;font-weight:700;color:#e8a020;font-family:'SF Mono',Consolas,monospace}
+.clock-date{font-size:12px;color:var(--text-muted);margin-top:2px}
+.main{flex:1;margin-left:260px;padding:24px 32px;min-height:100vh}
+.page-header{background:var(--bg-card);border-radius:12px;padding:20px 24px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--card-shadow)}
+.page-header-left{display:flex;align-items:center;gap:16px}
+.page-header-icon{width:44px;height:44px;background:var(--bg-input);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.page-header h2{font-size:20px;font-weight:700;color:var(--text-primary)}
+.page-header p{font-size:13px;color:var(--text-muted)}
+.page-header-stat{text-align:right}
+.page-header-stat .num{font-size:28px;font-weight:800;color:var(--accent)}
+.page-header-stat .label{font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted)}
+.tab-panel{display:none}.tab-panel.active{display:block}
+.form-section{background:var(--bg-card);border-radius:12px;padding:24px;margin-bottom:24px;box-shadow:var(--card-shadow)}
+.form-section h3{font-size:15px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px;color:var(--text-primary)}
+.form-section h3 i{color:#e8a020}
+.form-row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-end}
+.form-group{display:flex;flex-direction:column;gap:6px;flex:1;min-width:160px}
+.form-group label{font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);font-weight:600}
+.form-group input,.form-group select{padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-input);color:var(--text-primary);font-size:13px;font-family:inherit}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--accent)}
+.btn{padding:10px 20px;border-radius:8px;border:none;cursor:pointer;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:all 0.15s}
+.btn-submit{background:#e8a020;color:#1a1208}.btn-submit:hover{background:#f0b840}
+.btn-primary{background:var(--accent);color:#1a1208}.btn-primary:hover{background:var(--accent-light)}
+.btn-success{background:#e8a020;color:#1a1208}.btn-danger{background:#c07008;color:white}
+.btn-small{padding:5px 12px;font-size:11px}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.kpi-card{background:var(--bg-card);border-radius:12px;padding:20px;box-shadow:var(--card-shadow);border-top:3px solid var(--accent)}
+.kpi-card.green{border-top-color:#e8a020}.kpi-card.orange{border-top-color:#d48a10}.kpi-card.red{border-top-color:#c07008}.kpi-card.yellow{border-top-color:#f0b840}
+.kpi-card .kpi-icon{font-size:24px;margin-bottom:10px}
+.kpi-card .kpi-num{font-size:32px;font-weight:800;color:var(--text-primary)}
+.kpi-card .kpi-label{font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-top:4px}
+.summary-section{background:var(--bg-card);border-radius:12px;padding:20px;margin-bottom:24px;box-shadow:var(--card-shadow)}
+.summary-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.summary-header h4{font-size:12px;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted)}
+.summary-header span{font-size:12px;color:var(--text-secondary)}
+.progress-bar{height:8px;border-radius:4px;background:var(--bg-input);overflow:hidden;display:flex;margin-bottom:10px}
+.progress-bar .seg{height:100%;transition:width 0.3s}
+.summary-legend{display:flex;gap:16px;font-size:12px;color:var(--text-secondary)}
+.legend-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle}
+.table-section{background:var(--bg-card);border-radius:12px;padding:20px;margin-bottom:24px;box-shadow:var(--card-shadow)}
+.table-section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.table-section-header h3{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-secondary)}
+.search-input{padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-input);color:var(--text-primary);font-size:13px;width:220px}
+.search-input:focus{outline:none;border-color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border)}
+td{padding:10px 12px;border-bottom:1px solid rgba(58,44,30,0.5);color:var(--text-secondary)}
+tr:hover td{background:rgba(232,168,56,0.04)}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.b-present{background:rgba(232,160,32,0.15);color:#e8a020}.b-absent{background:rgba(192,112,8,0.15);color:#c07008}.b-leave{background:rgba(212,138,16,0.15);color:#d48a10}.b-wfh{background:rgba(240,184,64,0.15);color:#f0b840}.b-halfday{background:rgba(200,136,32,0.15);color:#c88820}.b-pending{background:rgba(232,160,32,0.15);color:#e8a020}.b-approved{background:rgba(240,184,64,0.15);color:#f0b840}.b-rejected{background:rgba(192,112,8,0.15);color:#c07008}
+.delete-btn{background:none;border:none;color:var(--red);cursor:pointer;opacity:0.5;font-size:13px}.delete-btn:hover{opacity:1}
+.empty-state{text-align:center;padding:30px;color:var(--text-muted);font-size:13px}
+.loading{text-align:center;padding:20px;color:var(--accent);font-size:13px}
+.manager-panel{background:var(--bg-card);border-radius:12px;padding:16px 20px;margin-bottom:20px;box-shadow:var(--card-shadow);border-left:3px solid var(--accent)}
+.manager-login{display:flex;align-items:center;gap:12px}
+.manager-badge{background:var(--accent);color:#1a1208;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700}
+.toast{position:fixed;bottom:24px;right:24px;background:#e8a020;color:white;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:600;z-index:9999;opacity:0;transition:opacity 0.3s;box-shadow:0 4px 12px rgba(0,0,0,0.3)}.toast.show{opacity:1}.toast.error{background:var(--red)}
+@media(max-width:900px){.sidebar{display:none}.main{margin-left:0}.kpi-row{grid-template-columns:repeat(2,1fr)}.form-row{flex-direction:column}}
 </style>
 </head>
 <body>
-
-<!-- SIDEBAR -->
 <div class="sidebar">
-  <div class="sidebar-brand">
-    <div class="sidebar-brand-icon"><i class="fa-solid fa-gauge-high"></i></div>
-    <div class="sidebar-brand-name">Team Neha Dashboard</div>
-    <div class="sidebar-brand-sub">ARI Operations | Mgr: Neha Agrawal</div>
+  <div class="sidebar-logo">📊</div>
+  <div class="sidebar-title">Team Neha Dashboard</div>
+  <div class="sidebar-sub">ARI Operations | Mgr: Neha Agrawal</div>
+  <button class="theme-toggle" onclick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i> <span id="theme-label">Light Mode</span></button>
+  <div class="nav-items">
+    <div class="nav-item active" data-tab="attendance"><i class="fa-solid fa-clipboard-check"></i> Attendance</div>
+    <div class="nav-item" data-tab="leave"><i class="fa-solid fa-calendar-days"></i> Leave Tracker</div>
+    <div class="nav-item" data-tab="ot"><i class="fa-solid fa-clock"></i> OT Tracker</div>
+    <div class="nav-item" data-tab="shift"><i class="fa-solid fa-calendar-week"></i> Shift Schedule</div>
   </div>
-  <div style="padding:10px 14px 0;"><button id="theme-toggle" onclick="toggleTheme()" style="width:100%;padding:8px;border-radius:8px;border:1px solid #3a2e20;background:#1a1410;color:#8a7560;font-size:11px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all 0.2s;"><i class="fa-solid fa-circle-half-stroke"></i> <span id="theme-label">Light Mode</span></button></div>
-  <div class="nav-menu">
-    <div class="nav-item active" onclick="switchPage('attendance')"><i class="fa-solid fa-clipboard-check"></i><span>Attendance</span></div>
-    <div class="nav-item" onclick="switchPage('leave')"><i class="fa-solid fa-calendar-days"></i><span>Leave Tracker</span></div>
-    <div class="nav-item" onclick="switchPage('ot')"><i class="fa-solid fa-clock"></i><span>OT Tracker</span></div>
-    <div class="nav-item" onclick="switchPage('shift')"><i class="fa-solid fa-calendar-week"></i><span>Shift Schedule</span></div>
-  </div>
-  <div class="sidebar-footer">
-    <div class="sidebar-clock" id="live-clock">--:--:-- --</div>
-    <div class="sidebar-date" id="live-date">Loading...</div>
+  <div class="sidebar-clock">
+    <div class="clock-time" id="live-clock">00:00:00 PM</div>
+    <div class="clock-date" id="live-date"></div>
   </div>
 </div>
-
-<!-- MAIN CONTENT -->
 <div class="main">
-
-  <!-- PAGE 1: ATTENDANCE -->
-  <div class="section active" id="sec-attendance">
-    <div class="page-banner">
-      <div class="page-banner-left">
-        <div class="page-banner-icon"><i class="fa-solid fa-clipboard-check"></i></div>
-        <div><div class="page-banner-title">Attendance Tracker</div><div class="page-banner-sub">Daily team attendance management</div></div>
-      </div>
-      <div class="page-banner-right">
-        <div class="page-banner-stat" id="att-total-count">0</div>
-        <div class="page-banner-stat-label">Entries Today</div>
-      </div>
-    </div>
-
-    <div class="form-container">
-      <div class="form-title"><i class="fa-solid fa-plus-circle"></i> Mark Attendance</div>
-      <div class="form-row">
-        <div class="form-group"><label>Employee Name</label><select id="att-name"><option value="">Select employee...</option><option>Neha Agrawal (Manager)</option><option>Anusha Vaddi</option><option>Aishwarya Rajesh</option><option>Ajay Sabbani</option><option>Asad Imroze</option><option>Irfan Basha Shaik</option><option>Jaydeep Guha</option><option>Kaushik Pal C M</option><option>Laiba Nasim</option><option>Mahesh Pakalapati</option><option>Mohammed Shaarif Hussain</option><option>Nada Haleem</option><option>Prashant Khanka</option><option>Rishi Gupta</option><option>Sangeeta Shukla</option><option>Shubham Bhatt</option><option>Sushma Maddi</option><option>Syed Asim Ali</option><option>Thilagaraj Selvaraj</option><option>Venkateswar Reddy Abbavaram</option></select></div>
-        <div class="form-group"><label>Status</label><select id="att-status"><option value="Present">Present</option><option value="Leave">Leave</option><option value="Absent">Absent</option></select></div>
-        <div class="form-group"><label>Check-In Time</label><input type="time" id="att-checkin"></div>
-        <div class="form-group"><label>Check-Out Time</label><input type="time" id="att-checkout"></div>
-      </div>
-      <button class="btn-submit" onclick="submitAttendance()"><i class="fa-solid fa-check"></i>&nbsp; Submit</button>
-      <div class="success-msg" id="att-success"><i class="fa-solid fa-circle-check"></i> Attendance marked successfully!</div>
-    </div>
-
-    <div class="kpi-row">
-      <div class="kpi-card green"><div class="kpi-icon"><i class="fa-solid fa-user-check"></i></div><div class="kpi-value" id="kpi-present">0</div><div class="kpi-label">Present</div></div>
-      <div class="kpi-card orange"><div class="kpi-icon"><i class="fa-solid fa-plane-departure"></i></div><div class="kpi-value" id="kpi-leave">0</div><div class="kpi-label">On Leave</div></div>
-      <div class="kpi-card red"><div class="kpi-icon"><i class="fa-solid fa-user-xmark"></i></div><div class="kpi-value" id="kpi-absent">0</div><div class="kpi-label">Absent</div></div>
-      <div class="kpi-card gold"><div class="kpi-icon"><i class="fa-solid fa-users"></i></div><div class="kpi-value">20</div><div class="kpi-label">Total Team</div></div>
-    </div>
-
-    <!-- Visual Summary Bar -->
-    <div class="table-container" style="padding:16px 20px; margin-bottom:20px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-        <span style="font-size:11px; color:#8a7560; font-weight:600; text-transform:uppercase;">Attendance Summary</span>
-        <span style="font-size:11px; color:#8a7560;" id="summary-text">No data yet</span>
-      </div>
-      <div class="summary-bar" id="att-summary-bar"></div>
-      <div style="display:flex; gap:14px; margin-top:8px;">
-        <span style="font-size:10px; color:#66bb6a;"><i class="fa-solid fa-circle" style="font-size:6px;"></i> Present</span>
-        <span style="font-size:10px; color:#ff8f00;"><i class="fa-solid fa-circle" style="font-size:6px;"></i> Leave</span>
-        <span style="font-size:10px; color:#ef5350;"><i class="fa-solid fa-circle" style="font-size:6px;"></i> Absent</span>
-      </div>
-    </div>
-
-    <div class="search-wrapper"><i class="fa-solid fa-search"></i><input type="text" class="search-box" placeholder="Search by name..." onkeyup="filterTable(this, 'att-table')"></div>
-    <div class="table-container">
-      <div class="table-header"><div class="table-title">Today's Attendance</div><div class="table-badge" id="att-badge">0 Entries</div></div>
-      <table>
-        <thead><tr><th>Employee</th><th>Status</th><th>Check-In</th><th>Check-Out</th><th>Hours</th><th></th></tr></thead>
-        <tbody id="att-table">
-          <tr id="att-empty"><td colspan="6" style="text-align:center; color:#5a4a38; padding:20px; font-size:12px;">No attendance entries yet — use the form above to mark attendance</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <!-- ATTENDANCE -->
+  <div class="tab-panel active" id="panel-attendance">
+    <div class="page-header"><div class="page-header-left"><div class="page-header-icon"><i class="fa-solid fa-clipboard-check" style="color:#e8a020"></i></div><div><h2>Attendance Tracker</h2><p>Daily team attendance management</p></div></div><div class="page-header-stat"><div class="num" id="att-count">0</div><div class="label">Entries Today</div></div></div>
+    <div class="form-section"><h3><i class="fa-solid fa-plus-circle"></i> Mark Attendance</h3><div class="form-row"><div class="form-group"><label>Employee Name</label><select id="att-name"></select></div><div class="form-group"><label>Status</label><select id="att-status"><option value="Present">Present</option><option value="Absent">Absent</option><option value="Half Day">Half Day</option><option value="WFH">WFH</option><option value="Leave">Leave</option></select></div><div class="form-group"><label>Check-in Time</label><input type="time" id="att-login"></div><div class="form-group"><label>Check-out Time</label><input type="time" id="att-logout"></div></div><div style="margin-top:16px"><button class="btn btn-submit" onclick="addAttendance()"><i class="fa-solid fa-check"></i> Submit</button></div></div>
+    <div class="kpi-row"><div class="kpi-card green"><div class="kpi-icon"><i class="fa-solid fa-user-check" style="color:#e8a020"></i></div><div class="kpi-num" id="kpi-present">0</div><div class="kpi-label">Present</div></div><div class="kpi-card orange"><div class="kpi-icon"><i class="fa-solid fa-plane-departure" style="color:#d48a10"></i></div><div class="kpi-num" id="kpi-leave">0</div><div class="kpi-label">On Leave</div></div><div class="kpi-card red"><div class="kpi-icon"><i class="fa-solid fa-user-xmark" style="color:#c07008"></i></div><div class="kpi-num" id="kpi-absent">0</div><div class="kpi-label">Absent</div></div><div class="kpi-card yellow"><div class="kpi-icon"><i class="fa-solid fa-users" style="color:#f0b840"></i></div><div class="kpi-num">20</div><div class="kpi-label">Total Team</div></div></div>
+    <div class="summary-section"><div class="summary-header"><h4>Attendance Summary</h4><span id="summary-text">100% Present | 0% Leave | 0% Absent</span></div><div class="progress-bar"><div class="seg" id="seg-present" style="width:100%;background:#e8a020"></div><div class="seg" id="seg-leave" style="width:0%;background:#d48a10"></div><div class="seg" id="seg-absent" style="width:0%;background:#c07008"></div></div><div class="summary-legend"><span><span class="legend-dot" style="background:#e8a020"></span>Present</span><span><span class="legend-dot" style="background:#d48a10"></span>Leave</span><span><span class="legend-dot" style="background:#c07008"></span>Absent</span></div></div>
+    <div class="table-section"><div class="table-section-header"><h3></h3><input type="text" class="search-input" id="att-search" placeholder="🔍 Search by name..." oninput="renderAttendance()"></div><div id="attendance-table"><div class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</div></div></div>
   </div>
-
-  <!-- PAGE 2: LEAVE TRACKER -->
-  <div class="section" id="sec-leave">
-    <div class="page-banner">
-      <div class="page-banner-left">
-        <div class="page-banner-icon"><i class="fa-solid fa-calendar-days"></i></div>
-        <div><div class="page-banner-title">Leave Tracker</div><div class="page-banner-sub">Manage team leave requests</div></div>
-      </div>
-      <div class="page-banner-right">
-        <div class="page-banner-stat" id="leave-total-count">0</div>
-        <div class="page-banner-stat-label">Requests</div>
-      </div>
-    </div>
-
-    <div class="form-container">
-      <div class="form-title"><i class="fa-solid fa-plus-circle"></i> Apply for Leave</div>
-      <div class="form-row">
-        <div class="form-group"><label>Employee Name</label><select id="leave-name"><option value="">Select employee...</option><option>Neha Agrawal (Manager)</option><option>Anusha Vaddi</option><option>Aishwarya Rajesh</option><option>Ajay Sabbani</option><option>Asad Imroze</option><option>Irfan Basha Shaik</option><option>Jaydeep Guha</option><option>Kaushik Pal C M</option><option>Laiba Nasim</option><option>Mahesh Pakalapati</option><option>Mohammed Shaarif Hussain</option><option>Nada Haleem</option><option>Prashant Khanka</option><option>Rishi Gupta</option><option>Sangeeta Shukla</option><option>Shubham Bhatt</option><option>Sushma Maddi</option><option>Syed Asim Ali</option><option>Thilagaraj Selvaraj</option><option>Venkateswar Reddy Abbavaram</option></select></div>
-        <div class="form-group"><label>Leave Type</label><select id="leave-type"><option>Sick Leave</option><option>Casual Leave</option><option>Annual Leave</option><option>Half Day - Sick Leave</option><option>Half Day - Casual Leave</option><option>Half Day - Annual Leave</option></select></div>
-        <div class="form-group"><label>From Date</label><input type="date" id="leave-from"></div>
-        <div class="form-group"><label>To Date</label><input type="date" id="leave-to"></div>
-      </div>
-      <div class="form-row" id="timing-row" style="display:none;">
-        <div class="form-group"><label>Timing</label><select id="leave-timing"><option>First Half (Morning)</option><option>Second Half (Afternoon)</option></select></div>
-      </div>
-      <button class="btn-submit" onclick="submitLeave()"><i class="fa-solid fa-paper-plane"></i>&nbsp; Submit</button>
-      <div class="success-msg" id="leave-success"><i class="fa-solid fa-circle-check"></i> Leave request submitted!</div>
-    </div>
-
-    <div class="kpi-row">
-      <div class="kpi-card gold"><div class="kpi-icon"><i class="fa-solid fa-users"></i></div><div class="kpi-value">20</div><div class="kpi-label">Total Team</div></div>
-      <div class="kpi-card green"><div class="kpi-icon"><i class="fa-solid fa-user-check"></i></div><div class="kpi-value">20</div><div class="kpi-label">Available</div></div>
-      <div class="kpi-card orange"><div class="kpi-icon"><i class="fa-solid fa-plane"></i></div><div class="kpi-value" id="kpi-on-leave">0</div><div class="kpi-label">On Leave</div></div>
-      <div class="kpi-card red"><div class="kpi-icon"><i class="fa-solid fa-calendar-xmark"></i></div><div class="kpi-value" id="kpi-month-leaves">0</div><div class="kpi-label">This Month</div></div>
-    </div>
-
-    <div class="table-container">
-      <div class="table-header"><div class="table-title">Leave Records</div><div class="table-badge" id="leave-badge">0 Records</div></div>
-      <table>
-        <thead><tr><th>Employee</th><th>Leave Type</th><th>From</th><th>To</th><th>Days</th><th>Status</th></tr></thead>
-        <tbody id="leave-table">
-          <tr id="leave-empty"><td colspan="6" style="text-align:center; color:#5a4a38; padding:20px; font-size:12px;">No leave requests yet</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <!-- LEAVE -->
+  <div class="tab-panel" id="panel-leave">
+    <div class="page-header"><div class="page-header-left"><div class="page-header-icon"><i class="fa-solid fa-calendar-days" style="color:#d48a10"></i></div><div><h2>Leave Tracker</h2><p>Submit and manage leave requests</p></div></div><div class="page-header-stat"><div class="num" id="leave-count">0</div><div class="label">Total Requests</div></div></div>
+    <div class="manager-panel"><div id="manager-login-section"><p style="margin-bottom:10px;color:var(--text-muted);font-size:13px"><i class="fa-solid fa-lock"></i> Manager access required to approve/reject</p><div class="manager-login"><input type="password" id="manager-pin" placeholder="Enter Manager PIN" style="padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-input);color:var(--text-primary);font-size:13px"><button class="btn btn-primary" onclick="managerLogin()"><i class="fa-solid fa-sign-in-alt"></i> Login</button></div></div><div id="manager-logged-in" style="display:none"><span class="manager-badge"><i class="fa-solid fa-crown"></i> MANAGER MODE</span><span style="margin-left:12px;color:var(--text-secondary);font-size:13px">Neha Agrawal</span><button class="btn btn-small btn-danger" style="margin-left:12px" onclick="managerLogout()">Logout</button></div></div>
+    <div class="form-section"><h3><i class="fa-solid fa-plus-circle"></i> Submit Leave Request</h3><div class="form-row"><div class="form-group"><label>Employee Name</label><select id="leave-name"></select></div><div class="form-group"><label>Leave Type</label><select id="leave-type"><option value="CL">Casual Leave (CL)</option><option value="SL">Sick Leave (SL)</option><option value="PL">Privilege Leave (PL)</option><option value="Comp Off">Comp Off</option><option value="Emergency">Emergency</option></select></div><div class="form-group"><label>From Date</label><input type="date" id="leave-from"></div><div class="form-group"><label>To Date</label><input type="date" id="leave-to"></div></div><div class="form-row" style="margin-top:12px"><div class="form-group" style="flex:3"><label>Reason</label><input type="text" id="leave-reason" placeholder="Reason for leave"></div><div class="form-group" style="flex:0"><label>&nbsp;</label><button class="btn btn-submit" onclick="submitLeave()"><i class="fa-solid fa-paper-plane"></i> Submit</button></div></div></div>
+    <div class="kpi-row" id="leave-kpis"></div>
+    <div class="table-section"><div class="table-section-header"><h3>Leave Requests</h3></div><div id="leave-table"><div class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</div></div></div>
   </div>
-
-  <!-- PAGE 3: OT TRACKER -->
-  <div class="section" id="sec-ot">
-    <div class="page-banner">
-      <div class="page-banner-left">
-        <div class="page-banner-icon"><i class="fa-solid fa-clock"></i></div>
-        <div><div class="page-banner-title">OT Tracker</div><div class="page-banner-sub">Track overtime hours &amp; types</div></div>
-      </div>
-      <div class="page-banner-right">
-        <div class="page-banner-stat" id="ot-total-hours">0h</div>
-        <div class="page-banner-stat-label">Total OT Hours</div>
-      </div>
-    </div>
-
-    <div class="form-container">
-      <div class="form-title"><i class="fa-solid fa-plus-circle"></i> Log Overtime</div>
-      <div class="form-row">
-        <div class="form-group"><label>Employee Name</label><select id="ot-name"><option value="">Select employee...</option><option>Neha Agrawal (Manager)</option><option>Anusha Vaddi</option><option>Aishwarya Rajesh</option><option>Ajay Sabbani</option><option>Asad Imroze</option><option>Irfan Basha Shaik</option><option>Jaydeep Guha</option><option>Kaushik Pal C M</option><option>Laiba Nasim</option><option>Mahesh Pakalapati</option><option>Mohammed Shaarif Hussain</option><option>Nada Haleem</option><option>Prashant Khanka</option><option>Rishi Gupta</option><option>Sangeeta Shukla</option><option>Shubham Bhatt</option><option>Sushma Maddi</option><option>Syed Asim Ali</option><option>Thilagaraj Selvaraj</option><option>Venkateswar Reddy Abbavaram</option></select></div>
-        <div class="form-group"><label>OT Date</label><input type="date" id="ot-date"></div>
-        <div class="form-group"><label>OT Hours</label><input type="number" id="ot-hours" placeholder="e.g. 2" min="1" max="12"></div>
-        <div class="form-group"><label>OT Type</label><select id="ot-reason"><option>6th Day OT</option><option>Pre Shift OT</option><option>Post Shift OT</option><option>Mandatory Off OT</option><option>Optional Off OT</option></select></div>
-      </div>
-      <button class="btn-submit" onclick="submitOT()"><i class="fa-solid fa-clock-rotate-left"></i>&nbsp; Log OT</button>
-      <div class="success-msg" id="ot-success"><i class="fa-solid fa-circle-check"></i> Overtime logged!</div>
-    </div>
-
-    <div class="kpi-row">
-      <div class="kpi-card orange"><div class="kpi-icon"><i class="fa-solid fa-hourglass-half"></i></div><div class="kpi-value" id="kpi-totalot">0h</div><div class="kpi-label">Total OT</div></div>
-      <div class="kpi-card gold"><div class="kpi-icon"><i class="fa-solid fa-user-clock"></i></div><div class="kpi-value" id="kpi-ot-members">0</div><div class="kpi-label">Members</div></div>
-      <div class="kpi-card red"><div class="kpi-icon"><i class="fa-solid fa-arrow-trend-up"></i></div><div class="kpi-value" id="kpi-ot-avg">0h</div><div class="kpi-label">Avg / Person</div></div>
-      <div class="kpi-card green"><div class="kpi-icon"><i class="fa-solid fa-gift"></i></div><div class="kpi-value" id="kpi-ot-entries">0</div><div class="kpi-label">Entries</div></div>
-    </div>
-
-    <div class="search-wrapper"><i class="fa-solid fa-search"></i><input type="text" class="search-box" placeholder="Search by name..." onkeyup="filterTable(this, 'ot-table')"></div>
-    <div class="table-container">
-      <div class="table-header"><div class="table-title">Overtime Log</div><div class="table-badge" id="ot-badge">0 Entries</div></div>
-      <table>
-        <thead><tr><th>Employee</th><th>OT Hours</th><th>Visual</th><th>Date</th><th>OT Type</th><th></th></tr></thead>
-        <tbody id="ot-table">
-          <tr id="ot-empty"><td colspan="6" style="text-align:center; color:#5a4a38; padding:20px; font-size:12px;">No OT entries yet — use the form above to log overtime</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <!-- OT -->
+  <div class="tab-panel" id="panel-ot">
+    <div class="page-header"><div class="page-header-left"><div class="page-header-icon"><i class="fa-solid fa-clock" style="color:#f0b840"></i></div><div><h2>OT Tracker</h2><p>Log and track overtime hours</p></div></div><div class="page-header-stat"><div class="num" id="ot-total-hours">0</div><div class="label">Total OT Hours</div></div></div>
+    <div class="form-section"><h3><i class="fa-solid fa-plus-circle"></i> Log Overtime</h3><div class="form-row"><div class="form-group"><label>Employee Name</label><select id="ot-name"></select></div><div class="form-group"><label>Date</label><input type="date" id="ot-date"></div><div class="form-group"><label>OT Hours</label><input type="number" id="ot-hours" min="0" step="0.5" placeholder="e.g. 2.5"></div><div class="form-group"><label>Reason</label><input type="text" id="ot-reason" placeholder="Reason for OT"></div></div><div style="margin-top:16px"><button class="btn btn-submit" onclick="addOT()"><i class="fa-solid fa-check"></i> Submit</button></div></div>
+    <div class="kpi-row" id="ot-kpis"></div>
+    <div class="table-section"><div class="table-section-header"><h3>OT Records</h3></div><div id="ot-table"><div class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</div></div></div>
   </div>
-
-  <!-- PAGE 4: SHIFT SCHEDULE -->
-  <div class="section" id="sec-shift">
-    <div class="page-banner">
-      <div class="page-banner-left">
-        <div class="page-banner-icon"><i class="fa-solid fa-calendar-week"></i></div>
-        <div><div class="page-banner-title">Shift Schedule</div><div class="page-banner-sub">Shift timings &amp; week offs</div></div>
-      </div>
-      <div class="page-banner-right">
-        <div class="page-banner-stat">20</div>
-        <div class="page-banner-stat-label">Team Members</div>
-      </div>
-    </div>
-
-    <div class="kpi-row">
-      <div class="kpi-card gold"><div class="kpi-icon"><i class="fa-solid fa-users"></i></div><div class="kpi-value">20</div><div class="kpi-label">Total Team</div></div>
-      <div class="kpi-card" style="border-color:#3a2e20;"><div class="kpi-icon" style="color:#4fc3f7;"><i class="fa-solid fa-sun"></i></div><div class="kpi-value">4</div><div class="kpi-label"><span class="shift-2pm">2 PM Shift</span></div></div>
-      <div class="kpi-card" style="border-color:#3a2e20;"><div class="kpi-icon" style="color:#f5a623;"><i class="fa-solid fa-cloud-sun"></i></div><div class="kpi-value">10</div><div class="kpi-label"><span class="shift-5pm">5 PM Shift</span></div></div>
-      <div class="kpi-card" style="border-color:#3a2e20;"><div class="kpi-icon" style="color:#ce93d8;"><i class="fa-solid fa-moon"></i></div><div class="kpi-value">5</div><div class="kpi-label"><span class="shift-9pm">9 PM Shift</span></div></div>
-    </div>
-
-    <div class="search-wrapper"><i class="fa-solid fa-search"></i><input type="text" class="search-box" placeholder="Search by name..." onkeyup="filterTable(this, 'shift-table')"></div>
-    <div class="table-container">
-      <div class="table-header"><div class="table-title">Shift &amp; Week Off</div><div class="table-badge">20 Members</div></div>
-      <table>
-        <thead><tr><th>Employee</th><th>Shift</th><th>Week Off</th></tr></thead>
-        <tbody id="shift-table">
-          <tr><td><strong>Neha Agrawal</strong> <span class="status status-taken" style="font-size:9px;">Manager</span></td><td><span class="shift-5pm">5:00 PM</span></td><td>Sun-Mon</td></tr>
-          <tr><td>Anusha Vaddi</td><td><span class="shift-5pm">5:00 PM</span></td><td>Tue-Wed</td></tr>
-          <tr><td>Aishwarya Rajesh</td><td><span class="shift-9pm">9:00 PM</span></td><td>Tue-Wed</td></tr>
-          <tr><td>Ajay Sabbani</td><td><span class="shift-9pm">9:00 PM</span></td><td>Mon-Tue</td></tr>
-          <tr><td>Asad Imroze</td><td><span class="shift-2pm">2:00 PM</span></td><td>Tue-Wed</td></tr>
-          <tr><td>Irfan Basha Shaik</td><td><span class="shift-2pm">2:00 PM</span></td><td>Wed-Thu</td></tr>
-          <tr><td>Jaydeep Guha</td><td><span class="shift-5pm">5:00 PM</span></td><td>Sun-Mon</td></tr>
-          <tr><td>Kaushik Pal C M</td><td><span class="shift-9pm">9:00 PM</span></td><td>Tue-Wed</td></tr>
-          <tr><td>Laiba Nasim</td><td><span class="shift-5pm">5:00 PM</span></td><td>Tue-Wed</td></tr>
-          <tr><td>Mahesh Pakalapati</td><td><span class="shift-9pm">9:00 PM</span></td><td>Mon-Tue</td></tr>
-          <tr><td>Mohammed Shaarif Hussain</td><td><span class="shift-5pm">5:00 PM</span></td><td>Tue-Wed</td></tr>
-          <tr><td>Nada Haleem</td><td><span class="shift-5pm">5:00 PM</span></td><td>Sun-Mon</td></tr>
-          <tr><td>Prashant Khanka</td><td><span class="shift-5pm">5:00 PM</span></td><td>Mon-Tue</td></tr>
-          <tr><td>Rishi Gupta</td><td><span class="shift-9pm">9:00 PM</span></td><td>Mon-Tue</td></tr>
-          <tr><td>Sangeeta Shukla</td><td>—</td><td>—</td></tr>
-          <tr><td>Shubham Bhatt</td><td><span class="shift-5pm">5:00 PM</span></td><td>Mon-Tue</td></tr>
-          <tr><td>Sushma Maddi</td><td><span class="shift-2pm">2:00 PM</span></td><td>Sun-Mon</td></tr>
-          <tr><td>Syed Asim Ali</td><td><span class="shift-5pm">5:00 PM</span></td><td>Wed-Thu</td></tr>
-          <tr><td>Thilagaraj Selvaraj</td><td><span class="shift-2pm">2:00 PM</span></td><td>Sun-Mon</td></tr>
-          <tr><td>Venkateswar Reddy Abbavaram</td><td><span class="shift-5pm">5:00 PM</span></td><td>Mon-Tue</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <!-- SHIFT -->
+  <div class="tab-panel" id="panel-shift">
+    <div class="page-header"><div class="page-header-left"><div class="page-header-icon"><i class="fa-solid fa-calendar-week" style="color:#e8a020"></i></div><div><h2>Shift Schedule</h2><p>Weekly shift assignments</p></div></div></div>
+    <div class="table-section"><div class="empty-state"><i class="fa-solid fa-calendar-week" style="font-size:36px;display:block;margin-bottom:10px;opacity:0.4"></i>Shift schedule coming soon</div></div>
   </div>
-
 </div>
-
+<div class="toast" id="toast"></div>
 <script>
-// Live Clock
-function updateClock() {
-  var now = new Date();
-  var h = now.getHours(); var m = now.getMinutes(); var s = now.getSeconds();
-  var ap = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12;
-  document.getElementById('live-clock').textContent = (h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(s<10?'0':'')+s+' '+ap;
-  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  document.getElementById('live-date').textContent = days[now.getDay()]+', '+now.getDate()+' '+months[now.getMonth()]+' '+now.getFullYear();
-}
-updateClock();
-setInterval(updateClock, 1000);
-
-// Navigation
-function switchPage(page) {
-  document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active');});
-  document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active');});
-  event.currentTarget.classList.add('active');
-  document.getElementById('sec-'+page).classList.add('active');
-}
-
-// Half-day timing toggle
-document.getElementById('leave-type').addEventListener('change', function() {
-  document.getElementById('timing-row').style.display = this.value.indexOf('Half Day') !== -1 ? 'grid' : 'none';
-});
-
-// Counters
-var attCounts = {present:0, leave:0, absent:0};
-var otTotal = 0; var otMembers = new Set(); var otEntries = 0; var leaveCount = 0;
-
-function updateAttKPIs() {
-  document.getElementById('kpi-present').textContent = attCounts.present;
-  document.getElementById('kpi-leave').textContent = attCounts.leave;
-  document.getElementById('kpi-absent').textContent = attCounts.absent;
-  var total = attCounts.present + attCounts.leave + attCounts.absent;
-  document.getElementById('att-total-count').textContent = total;
-  document.getElementById('att-badge').textContent = total + ' Entries';
-  // Summary bar
-  var bar = document.getElementById('att-summary-bar');
-  if (total > 0) {
-    var pPct = (attCounts.present/total*100).toFixed(0);
-    var lPct = (attCounts.leave/total*100).toFixed(0);
-    var aPct = (attCounts.absent/total*100).toFixed(0);
-    bar.innerHTML = '<div class="summary-bar-fill" style="width:'+pPct+'%;background:#66bb6a;"></div><div class="summary-bar-fill" style="width:'+lPct+'%;background:#ff8f00;"></div><div class="summary-bar-fill" style="width:'+aPct+'%;background:#ef5350;"></div>';
-    document.getElementById('summary-text').textContent = pPct+'% Present | '+lPct+'% Leave | '+aPct+'% Absent';
-  }
-}
-
-function updateOTKPIs() {
-  document.getElementById('kpi-totalot').textContent = otTotal+'h';
-  document.getElementById('kpi-ot-members').textContent = otMembers.size;
-  document.getElementById('kpi-ot-avg').textContent = otMembers.size>0?(otTotal/otMembers.size).toFixed(1)+'h':'0h';
-  document.getElementById('kpi-ot-entries').textContent = otEntries;
-  document.getElementById('ot-total-hours').textContent = otTotal+'h';
-  document.getElementById('ot-badge').textContent = otEntries+' Entries';
-}
-
-function formatTime(t) {
-  if(!t) return '\u2014'; var p=t.split(':'); var h=parseInt(p[0]); var m=p[1];
-  var ap=h>=12?'PM':'AM'; h=h%12||12; return (h<10?'0':'')+h+':'+m+' '+ap;
-}
-
-function submitAttendance() {
-  var name=document.getElementById('att-name').value;
-  var status=document.getElementById('att-status').value;
-  var ci=document.getElementById('att-checkin').value;
-  var co=document.getElementById('att-checkout').value;
-  if(!name){alert('Please select an employee');return;}
-  var attEmpty=document.getElementById('att-empty'); if(attEmpty) attEmpty.remove();
-  var sc=status==='Present'?'status-present':status==='Leave'?'status-leave':'status-absent';
-  var cin=status==='Present'?formatTime(ci):'\u2014';
-  var cout=status==='Present'?formatTime(co):'\u2014';
-  var hrs='\u2014';
-  if(status==='Present'&&ci&&co){var d=(parseInt(co.split(':')[0])*60+parseInt(co.split(':')[1]))-(parseInt(ci.split(':')[0])*60+parseInt(ci.split(':')[1])); hrs=(d/60).toFixed(1)+'h';}
-  var row='<tr><td>'+name+'</td><td><span class="status '+sc+'">'+status+'</span></td><td>'+cin+'</td><td>'+cout+'</td><td>'+hrs+'</td><td><button class="del-btn" onclick="deleteAttRow(this,\''+status+'\')"><i class="fa-solid fa-trash-can"></i></button></td></tr>';
-  document.getElementById('att-table').insertAdjacentHTML('afterbegin',row);
-  if(status==='Present') attCounts.present++;
-  else if(status==='Leave') attCounts.leave++;
-  else attCounts.absent++;
-  updateAttKPIs();
-  document.getElementById('att-success').classList.add('show');
-  setTimeout(function(){document.getElementById('att-success').classList.remove('show');},2500);
-  document.getElementById('att-name').value=''; document.getElementById('att-checkin').value=''; document.getElementById('att-checkout').value='';
-}
-
-function deleteAttRow(btn, status) {
-  btn.closest('tr').remove();
-  if(status==='Present') attCounts.present--;
-  else if(status==='Leave') attCounts.leave--;
-  else attCounts.absent--;
-  updateAttKPIs();
-}
-
-function submitLeave() {
-  var name=document.getElementById('leave-name').value; var type=document.getElementById('leave-type').value;
-  var from=document.getElementById('leave-from').value; var to=document.getElementById('leave-to').value;
-  if(!name||!from||!to){alert('Please fill all fields');return;}
-  var leaveEmpty=document.getElementById('leave-empty'); if(leaveEmpty) leaveEmpty.remove();
-  var hd=type.indexOf('Half Day')!==-1; var tm=hd?document.getElementById('leave-timing').value:'';
-  var dt=hd?type+' ('+tm.split(' ')[0]+' '+tm.split(' ')[1]+')':type;
-  var f=new Date(from);var t=new Date(to); var days=hd?0.5:Math.ceil((t-f)/(1000*60*60*24))+1;
-  var fs=f.toLocaleDateString('en-US',{month:'short',day:'numeric'}); var ts=t.toLocaleDateString('en-US',{month:'short',day:'numeric'});
-  var row='<tr><td>'+name+'</td><td>'+dt+'</td><td>'+fs+'</td><td>'+ts+'</td><td>'+days+'</td><td><span class="status status-pending">Pending</span></td></tr>';
-  document.getElementById('leave-table').insertAdjacentHTML('afterbegin',row);
-  leaveCount++;
-  document.getElementById('leave-total-count').textContent=leaveCount;
-  document.getElementById('kpi-month-leaves').textContent=leaveCount;
-  document.getElementById('leave-badge').textContent=leaveCount+' Records';
-  document.getElementById('leave-success').classList.add('show');
-  setTimeout(function(){document.getElementById('leave-success').classList.remove('show');},2500);
-  document.getElementById('leave-name').value=''; document.getElementById('leave-from').value=''; document.getElementById('leave-to').value='';
-}
-
-function submitOT() {
-  var name=document.getElementById('ot-name').value; var date=document.getElementById('ot-date').value;
-  var hours=document.getElementById('ot-hours').value; var reason=document.getElementById('ot-reason').value;
-  if(!name||!date||!hours){alert('Please fill all fields');return;}
-  var otEmpty=document.getElementById('ot-empty'); if(otEmpty) otEmpty.remove();
-  var h=parseInt(hours); var color=h>=14?'#ef5350':h>=10?'#ff8f00':'#66bb6a';
-  var bc=h>=14?'high':h>=10?'medium':'low'; var bw=Math.min((h/16)*100,100);
-  var ds=new Date(date).toLocaleDateString('en-US',{month:'short',day:'numeric'});
-  var row='<tr><td>'+name+'</td><td><strong style="color:'+color+';">'+h+'h</strong></td><td><div class="ot-bar-container"><div class="ot-bar"><div class="ot-bar-fill '+bc+'" style="width:'+bw+'%"></div></div></div></td><td>'+ds+'</td><td>'+reason+'</td><td><button class="del-btn" onclick="deleteOTRow(this,'+h+',\''+name+'\')"><i class="fa-solid fa-trash-can"></i></button></td></tr>';
-  document.getElementById('ot-table').insertAdjacentHTML('afterbegin',row);
-  otTotal+=h; otMembers.add(name); otEntries++;
-  updateOTKPIs();
-  document.getElementById('ot-success').classList.add('show');
-  setTimeout(function(){document.getElementById('ot-success').classList.remove('show');},2500);
-  document.getElementById('ot-name').value=''; document.getElementById('ot-date').value=''; document.getElementById('ot-hours').value='';
-}
-
-function deleteOTRow(btn, hours, name) {
-  btn.closest('tr').remove();
-  otTotal-=hours; otEntries--;
-  updateOTKPIs();
-}
-
-// Search/Filter
-function filterTable(input, tbodyId) {
-  var filter = input.value.toLowerCase();
-  var rows = document.getElementById(tbodyId).getElementsByTagName('tr');
-  for (var i = 0; i < rows.length; i++) {
-    var name = rows[i].getElementsByTagName('td')[0];
-    if (name) {
-      rows[i].style.display = name.textContent.toLowerCase().indexOf(filter) > -1 ? '' : 'none';
-    }
-  }
-}
-
-// Theme Toggle
-function toggleTheme() {
-  document.body.classList.toggle('light');
-  var isLight = document.body.classList.contains('light');
-  document.getElementById('theme-label').textContent = isLight ? 'Dark Mode' : 'Light Mode';
-}
-
-// Auto-fill shift timings when name is selected
-var shiftMap = {
-  'Neha Agrawal (Manager)': ['17:00','02:00'],
-  'Anusha Vaddi': ['17:00','02:00'],
-  'Aishwarya Rajesh': ['21:00','06:00'],
-  'Ajay Sabbani': ['21:00','06:00'],
-  'Asad Imroze': ['14:00','23:00'],
-  'Irfan Basha Shaik': ['14:00','23:00'],
-  'Jaydeep Guha': ['17:00','02:00'],
-  'Kaushik Pal C M': ['21:00','06:00'],
-  'Laiba Nasim': ['17:00','02:00'],
-  'Mahesh Pakalapati': ['21:00','06:00'],
-  'Mohammed Shaarif Hussain': ['17:00','02:00'],
-  'Nada Haleem': ['17:00','02:00'],
-  'Prashant Khanka': ['17:00','02:00'],
-  'Rishi Gupta': ['21:00','06:00'],
-  'Sangeeta Shukla': ['09:00','18:00'],
-  'Shubham Bhatt': ['17:00','02:00'],
-  'Sushma Maddi': ['14:00','23:00'],
-  'Syed Asim Ali': ['17:00','02:00'],
-  'Thilagaraj Selvaraj': ['14:00','23:00'],
-  'Venkateswar Reddy Abbavaram': ['17:00','02:00']
-};
-document.getElementById('att-name').addEventListener('change', function() {
-  var name = this.value;
-  if (shiftMap[name]) {
-    document.getElementById('att-checkin').value = shiftMap[name][0];
-    document.getElementById('att-checkout').value = shiftMap[name][1];
-  } else {
-    document.getElementById('att-checkin').value = '';
-    document.getElementById('att-checkout').value = '';
-  }
-});
+var API_URL='https://script.google.com/macros/s/AKfycbyL2LtB1wkBotu4SZf_eNHDfd-KWtPF0qvL_01xosaBryZXggboH27zn9Aba09CRLSG7g/exec';
+var MANAGER_PIN='neha2026';
+var isManagerLoggedIn=false;
+var attData=[],leaveData=[],otData=[];
+var teamMembers=['Anusha Vaddi','Aishwarya Rajesh','Ajay Sabbani','Asad Imroze','Irfan Basha Shaik','Jaydeep Guha','Kaushik Pal C M','Laiba Nasim','Mahesh Pakalapati','Mohammed Shaarif Hussain','Nada Haleem','Prashant Khanka','Rishi Gupta','Sangeeta Shukla','Shubham Bhatt','Sushma Maddi','Syed Asim Ali','Thilagaraj Selvaraj','Venkateswar Reddy Abbavaram','Neha Agrawal'];
+function populateDropdowns(){['att-name','leave-name','ot-name'].forEach(function(id){var el=document.getElementById(id);el.innerHTML='<option value="">Select employee...</option>';teamMembers.forEach(function(n){el.innerHTML+='<option value="'+n+'">'+n+'</option>'});})}
+populateDropdowns();
+var today=new Date().toISOString().split('T')[0];
+document.getElementById('ot-date').value=today;
+document.getElementById('leave-from').value=today;
+document.getElementById('leave-to').value=today;
+function updateClock(){var now=new Date();document.getElementById('live-clock').textContent=now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true}).toUpperCase();document.getElementById('live-date').textContent=now.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'short',year:'numeric'})}
+updateClock();setInterval(updateClock,1000);
+function toggleTheme(){document.body.classList.toggle('light');document.getElementById('theme-label').textContent=document.body.classList.contains('light')?'Dark Mode':'Light Mode'}
+document.querySelectorAll('.nav-item').forEach(function(item){item.addEventListener('click',function(){document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active')});document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});item.classList.add('active');document.getElementById('panel-'+item.dataset.tab).classList.add('active')})});
+function apiCall(params,cb){var url=API_URL+'?'+Object.keys(params).map(function(k){return k+'='+encodeURIComponent(params[k])}).join('&');fetch(url).then(function(r){return r.json()}).then(function(d){cb(d)}).catch(function(e){showToast('Error: '+e.message,true);cb({success:false})})}
+function showToast(msg,err){var t=document.getElementById('toast');t.textContent=msg;t.className='toast show'+(err?' error':'');setTimeout(function(){t.className='toast'},3000)}
+function formatDate(d){if(!d)return'—';var dt=new Date(d);if(isNaN(dt))return d;return dt.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})}
+// ATTENDANCE
+function addAttendance(){var name=document.getElementById('att-name').value;var status=document.getElementById('att-status').value;var login=document.getElementById('att-login').value;var logout=document.getElementById('att-logout').value;if(!name){alert('Please select an employee');return}apiCall({action:'add',sheet:'Attendance',name:name,date:today,status:status,login:login,logout:logout},function(r){if(r.success){showToast('Attendance logged!');loadAttendance()}else showToast('Failed',true)});document.getElementById('att-name').value='';document.getElementById('att-login').value='';document.getElementById('att-logout').value=''}
+function deleteAttendance(id){apiCall({action:'delete',sheet:'Attendance',id:id},function(r){if(r.success){showToast('Deleted');loadAttendance()}})}
+function loadAttendance(){apiCall({action:'getAll',sheet:'Attendance'},function(r){attData=(r.success&&r.data)?r.data:[];renderAttendance()})}
+function renderAttendance(){var search=(document.getElementById('att-search').value||'').toLowerCase();var records=attData;if(search)records=records.filter(function(r){return(r.name||'').toLowerCase().indexOf(search)>-1});var todayRec=records.filter(function(r){return r.date===today});var present=todayRec.filter(function(r){return r.status==='Present'||r.status==='WFH'}).length;var absent=todayRec.filter(function(r){return r.status==='Absent'}).length;var onLeave=todayRec.filter(function(r){return r.status==='Leave'||r.status==='Half Day'}).length;document.getElementById('kpi-present').textContent=present;document.getElementById('kpi-absent').textContent=absent;document.getElementById('kpi-leave').textContent=onLeave;document.getElementById('att-count').textContent=todayRec.length;var total=present+absent+onLeave||1;var pP=Math.round(present/total*100),pL=Math.round(onLeave/total*100),pA=Math.round(absent/total*100);document.getElementById('seg-present').style.width=pP+'%';document.getElementById('seg-present').style.background='#e8a020';document.getElementById('seg-leave').style.width=pL+'%';document.getElementById('seg-absent').style.width=pA+'%';document.getElementById('summary-text').textContent=pP+'% Present | '+pL+'% Leave | '+pA+'% Absent';var container=document.getElementById('attendance-table');if(records.length===0){container.innerHTML='<div class="empty-state">No records yet</div>';return}var html='<table><thead><tr><th>#</th><th>Name</th><th>Date</th><th>Status</th><th>Check-in</th><th>Check-out</th><th></th></tr></thead><tbody>';records.slice().reverse().forEach(function(r,i){var cls=r.status==='Present'?'b-present':r.status==='Absent'?'b-absent':r.status==='WFH'?'b-wfh':r.status==='Leave'?'b-leave':'b-halfday';html+='<tr><td>'+(i+1)+'</td><td><strong>'+r.name+'</strong></td><td>'+formatDate(r.date)+'</td><td><span class="badge '+cls+'">'+r.status+'</span></td><td>'+(r.login||'—')+'</td><td>'+(r.logout||'—')+'</td><td><button class="delete-btn" onclick="deleteAttendance(\''+r.id+'\')"><i class="fa-solid fa-trash"></i></button></td></tr>'});html+='</tbody></table>';container.innerHTML=html}
+// OT
+function addOT(){var name=document.getElementById('ot-name').value;var date=document.getElementById('ot-date').value;var hours=document.getElementById('ot-hours').value;var reason=document.getElementById('ot-reason').value;if(!name||!hours){alert('Please select employee and enter hours');return}apiCall({action:'add',sheet:'OT',name:name,date:date,hours:hours,reason:reason},function(r){if(r.success){showToast('OT logged!');loadOT()}else showToast('Failed',true)});document.getElementById('ot-name').value='';document.getElementById('ot-hours').value='';document.getElementById('ot-reason').value=''}
+function deleteOT(id){apiCall({action:'delete',sheet:'OT',id:id},function(r){if(r.success){showToast('Deleted');loadOT()}})}
+function loadOT(){apiCall({action:'getAll',sheet:'OT'},function(r){otData=(r.success&&r.data)?r.data:[];renderOT()})}
+function renderOT(){var records=otData;var totalH=records.reduce(function(s,r){return s+parseFloat(r.hours||0)},0);document.getElementById('ot-total-hours').textContent=totalH;document.getElementById('ot-kpis').innerHTML='<div class="kpi-card yellow"><div class="kpi-icon"><i class="fa-solid fa-clock" style="color:#f0b840"></i></div><div class="kpi-num">'+totalH+'h</div><div class="kpi-label">Total Hours</div></div><div class="kpi-card green"><div class="kpi-icon"><i class="fa-solid fa-list" style="color:#e8a020"></i></div><div class="kpi-num">'+records.length+'</div><div class="kpi-label">Entries</div></div><div class="kpi-card orange"><div class="kpi-icon"><i class="fa-solid fa-chart-line" style="color:#d48a10"></i></div><div class="kpi-num">'+(records.length?(totalH/records.length).toFixed(1):0)+'</div><div class="kpi-label">Avg Hours</div></div>';var container=document.getElementById('ot-table');if(records.length===0){container.innerHTML='<div class="empty-state">No OT records yet</div>';return}var html='<table><thead><tr><th>#</th><th>Name</th><th>Date</th><th>Hours</th><th>Reason</th><th></th></tr></thead><tbody>';records.slice().reverse().forEach(function(r,i){html+='<tr><td>'+(i+1)+'</td><td><strong>'+r.name+'</strong></td><td>'+formatDate(r.date)+'</td><td><strong style="color:#e8a020">'+r.hours+'h</strong></td><td>'+(r.reason||'—')+'</td><td><button class="delete-btn" onclick="deleteOT(\''+r.id+'\')"><i class="fa-solid fa-trash"></i></button></td></tr>'});html+='</tbody></table>';container.innerHTML=html}
+// LEAVE
+function submitLeave(){var name=document.getElementById('leave-name').value;var type=document.getElementById('leave-type').value;var fromDate=document.getElementById('leave-from').value;var toDate=document.getElementById('leave-to').value;var reason=document.getElementById('leave-reason').value;if(!name||!fromDate||!toDate){alert('Please fill required fields');return}apiCall({action:'add',sheet:'Leaves',name:name,type:type,fromDate:fromDate,toDate:toDate,reason:reason,status:'Pending'},function(r){if(r.success){showToast('Leave request submitted!');loadLeaves()}else showToast('Failed',true)});document.getElementById('leave-name').value='';document.getElementById('leave-reason').value=''}
+function approveLeave(id){if(!isManagerLoggedIn)return;apiCall({action:'update',sheet:'Leaves',id:id,status:'Approved'},function(r){if(r.success){showToast('Approved!');loadLeaves()}})}
+function rejectLeave(id){if(!isManagerLoggedIn)return;apiCall({action:'update',sheet:'Leaves',id:id,status:'Rejected'},function(r){if(r.success){showToast('Rejected');loadLeaves()}})}
+function deleteLeave(id){apiCall({action:'delete',sheet:'Leaves',id:id},function(r){if(r.success){showToast('Deleted');loadLeaves()}})}
+function loadLeaves(){apiCall({action:'getAll',sheet:'Leaves'},function(r){leaveData=(r.success&&r.data)?r.data:[];renderLeaves()})}
+function renderLeaves(){var records=leaveData;var approved=records.filter(function(r){return r.status==='Approved'}).length;var pending=records.filter(function(r){return r.status==='Pending'}).length;var rejected=records.filter(function(r){return r.status==='Rejected'}).length;document.getElementById('leave-count').textContent=records.length;document.getElementById('leave-kpis').innerHTML='<div class="kpi-card green"><div class="kpi-icon"><i class="fa-solid fa-check-circle" style="color:#e8a020"></i></div><div class="kpi-num">'+approved+'</div><div class="kpi-label">Approved</div></div><div class="kpi-card orange"><div class="kpi-icon"><i class="fa-solid fa-hourglass-half" style="color:#d48a10"></i></div><div class="kpi-num">'+pending+'</div><div class="kpi-label">Pending</div></div><div class="kpi-card red"><div class="kpi-icon"><i class="fa-solid fa-times-circle" style="color:#c07008"></i></div><div class="kpi-num">'+rejected+'</div><div class="kpi-label">Rejected</div></div><div class="kpi-card yellow"><div class="kpi-icon"><i class="fa-solid fa-list" style="color:#f0b840"></i></div><div class="kpi-num">'+records.length+'</div><div class="kpi-label">Total</div></div>';var container=document.getElementById('leave-table');if(records.length===0){container.innerHTML='<div class="empty-state">No leave requests yet</div>';return}var html='<table><thead><tr><th>#</th><th>Name</th><th>Type</th><th>From</th><th>To</th><th>Reason</th><th>Status</th>';if(isManagerLoggedIn)html+='<th>Action</th>';html+='<th></th></tr></thead><tbody>';records.slice().reverse().forEach(function(r,i){var cls=r.status==='Approved'?'b-approved':r.status==='Rejected'?'b-rejected':'b-pending';html+='<tr><td>'+(i+1)+'</td><td><strong>'+r.name+'</strong></td><td>'+r.type+'</td><td>'+formatDate(r.fromDate)+'</td><td>'+formatDate(r.toDate)+'</td><td>'+(r.reason||'—')+'</td><td><span class="badge '+cls+'">'+r.status+'</span></td>';if(isManagerLoggedIn){if(r.status==='Pending'){html+='<td><button class="btn btn-small btn-success" onclick="approveLeave(\''+r.id+'\')"><i class="fa-solid fa-check"></i></button> <button class="btn btn-small btn-danger" onclick="rejectLeave(\''+r.id+'\')"><i class="fa-solid fa-times"></i></button></td>'}else{html+='<td style="color:var(--text-muted);font-size:11px">—</td>'}}html+='<td><button class="delete-btn" onclick="deleteLeave(\''+r.id+'\')"><i class="fa-solid fa-trash"></i></button></td></tr>'});html+='</tbody></table>';container.innerHTML=html}
+// MANAGER
+function managerLogin(){if(document.getElementById('manager-pin').value===MANAGER_PIN){isManagerLoggedIn=true;document.getElementById('manager-login-section').style.display='none';document.getElementById('manager-logged-in').style.display='block';renderLeaves()}else alert('Incorrect PIN!')}
+function managerLogout(){isManagerLoggedIn=false;document.getElementById('manager-login-section').style.display='block';document.getElementById('manager-logged-in').style.display='none';document.getElementById('manager-pin').value='';renderLeaves()}
+// INIT
+loadAttendance();loadOT();loadLeaves();
 </script>
+
 
 </body></html>
