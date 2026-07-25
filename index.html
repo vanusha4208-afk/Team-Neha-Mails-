@@ -479,7 +479,7 @@ tr:hover td{background:rgba(232,168,56,0.04)}
 </div>
 <div class="toast" id="toast"></div>
 <script>
-var API_URL='https://script.google.com/macros/s/AKfycbyL2LtB1wkBotu4SZf_eNHDfd-KWtPF0qvL_01xosaBryZXggboH27zn9Aba09CRLSG7g/exec';
+var API_URL='https://script.google.com/macros/s/AKfycbyk6uiwcgtReUnmyW5vAiNtp1NjyiKBSVto9TReVFmjI-ynM5UCNGANVcOFOkNs9Qya/exec';
 var MANAGER_PIN='neha2026';
 var isManagerLoggedIn=false;
 var attData=[],leaveData=[],otData=[];
@@ -494,7 +494,7 @@ function updateClock(){var now=new Date();document.getElementById('live-clock').
 updateClock();setInterval(updateClock,1000);
 function toggleTheme(){document.body.classList.toggle('light');document.getElementById('theme-label').textContent=document.body.classList.contains('light')?'Dark Mode':'Light Mode'}
 document.querySelectorAll('.nav-item').forEach(function(item){item.addEventListener('click',function(){document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active')});document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});item.classList.add('active');document.getElementById('panel-'+item.dataset.tab).classList.add('active')})});
-function apiCall(params,cb){var url=API_URL+'?'+Object.keys(params).map(function(k){return k+'='+encodeURIComponent(params[k])}).join('&');fetch(url).then(function(r){return r.json()}).then(function(d){cb(d)}).catch(function(e){showToast('Error: '+e.message,true);cb({success:false})})}
+function apiCall(params,cb){var isRead=(params.action==='getAll');if(isRead){var url=API_URL+'?'+Object.keys(params).map(function(k){return k+'='+encodeURIComponent(params[k])}).join('&');fetch(url,{redirect:'follow'}).then(function(r){return r.text()}).then(function(t){try{var d=JSON.parse(t);cb(d)}catch(e){console.error('Parse error:',t);cb({success:false})}}).catch(function(e){showToast('Error: '+e.message,true);cb({success:false})})}else{fetch(API_URL,{method:'POST',redirect:'follow',headers:{'Content-Type':'text/plain'},body:JSON.stringify(params)}).then(function(r){return r.text()}).then(function(t){try{var d=JSON.parse(t);cb(d)}catch(e){console.error('Parse error:',t);cb({success:false})}}).catch(function(e){showToast('Error: '+e.message,true);cb({success:false})})}}
 function showToast(msg,err){var t=document.getElementById('toast');t.textContent=msg;t.className='toast show'+(err?' error':'');setTimeout(function(){t.className='toast'},3000)}
 function formatDate(d){if(!d)return'—';var dt=new Date(d);if(isNaN(dt))return d;return dt.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})}
 // ATTENDANCE
