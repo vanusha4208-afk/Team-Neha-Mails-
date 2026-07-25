@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><style id="qw-theme">:root {
+<html lang="en"><head><style id="qw-theme">:root {
   --color-bg: #faf9fc;
   --color-text: #131920;
   --color-navbar-bg: #f9f9fb;
@@ -354,79 +354,113 @@ a { color: var(--color-link, var(--color-primary)); }</style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg-main:#1a1208;--bg-sidebar:#1a1208;--bg-card:#2a1e12;--bg-input:#2a1e12;--text-primary:#f0e8d8;--text-secondary:#e8a020;--text-muted:#c88820;--accent:#e8a020;--accent-light:#f0b840;--border:#3a2c1c;--green:#e8a020;--orange:#e8a020;--red:#e85040;--yellow:#e8a020;--card-shadow:0 2px 8px rgba(0,0,0,0.4)}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg-main);color:var(--text-primary);display:flex;min-height:100vh}
-body.light{--bg-main:#f8f4ec;--bg-sidebar:#1a1208;--bg-card:#ffffff;--bg-input:#f0ebe3;--text-primary:#1a1208;--text-secondary:#6b5a40;--text-muted:#9a8060;--border:#e0d5c8;--card-shadow:0 2px 8px rgba(0,0,0,0.08)}
-body.light .sidebar{--text-primary:#f0e8d8;--text-secondary:#c8a870;--text-muted:#8a7050}
-.sidebar{width:260px;background:var(--bg-sidebar);padding:24px 16px;display:flex;flex-direction:column;border-right:1px solid var(--border);position:fixed;height:100vh;overflow-y:auto}
+:root{--bg:#1a1a1a;--sidebar:#141414;--card:#242424;--input:#2e2e2e;--text:#f5f0eb;--text2:#d4a0a0;--muted:#8a6a6a;--accent:#ff6b6b;--accent2:#ff8e8e;--border:#333;--green:#4caf50;--orange:#ff9800;--red:#ff4757;--yellow:#ffc107;--blue:#42a5f5;--shadow:0 2px 8px rgba(0,0,0,0.4)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);display:flex;min-height:100vh}
+
+/* Sidebar */
+.sidebar{width:260px;background:var(--sidebar);padding:24px 16px;display:flex;flex-direction:column;border-right:1px solid var(--border);position:fixed;height:100vh;overflow-y:auto}
 .sidebar-logo{width:44px;height:44px;background:var(--accent);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}
-.sidebar-title{font-size:16px;font-weight:700;color:var(--text-primary);margin-bottom:2px}
-.sidebar-sub{font-size:12px;color:var(--text-muted);margin-bottom:20px}
-.theme-toggle{width:100%;padding:8px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);cursor:pointer;font-size:13px;margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:8px}
-.theme-toggle:hover{background:rgba(232,168,56,0.1)}
+.sidebar-title{font-size:16px;font-weight:700;margin-bottom:2px}
+.sidebar-sub{font-size:12px;color:var(--muted);margin-bottom:20px}
+.theme-toggle{width:100%;padding:8px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text2);cursor:pointer;font-size:13px;margin-bottom:24px;display:flex;align-items:center;justify-content:center;gap:8px}
+.theme-toggle:hover{background:rgba(232,160,32,0.1)}
 .nav-items{display:flex;flex-direction:column;gap:4px;flex:1}
-.nav-item{padding:12px 16px;border-radius:10px;cursor:pointer;color:var(--text-secondary);font-size:14px;font-weight:500;display:flex;align-items:center;gap:12px;transition:all 0.15s}
-.nav-item:hover{color:var(--text-primary);background:rgba(232,168,56,0.08)}
-.nav-item.active{color:var(--accent);background:rgba(232,168,56,0.12);font-weight:600}
+.nav-item{padding:12px 16px;border-radius:10px;cursor:pointer;color:var(--text2);font-size:14px;font-weight:500;display:flex;align-items:center;gap:12px;transition:all 0.15s}
+.nav-item:hover{color:var(--text);background:rgba(232,160,32,0.08)}
+.nav-item.active{color:var(--accent);background:rgba(232,160,32,0.12);font-weight:600}
 .nav-item i{width:20px;text-align:center;font-size:16px}
 .sidebar-clock{margin-top:auto;padding-top:20px}
-.clock-time{font-size:14px;font-weight:700;color:#e8a020;font-family:'SF Mono',Consolas,monospace}
-.clock-date{font-size:12px;color:var(--text-muted);margin-top:2px}
+.clock-time{font-size:14px;font-weight:700;color:var(--accent);font-family:'SF Mono',Consolas,monospace}
+.clock-date{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* Main */
 .main{flex:1;margin-left:260px;padding:24px 32px;min-height:100vh}
-.page-header{background:var(--bg-card);border-radius:12px;padding:20px 24px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--card-shadow)}
+.tab-panel{display:none}.tab-panel.active{display:block}
+
+/* Page Header */
+.page-header{background:var(--card);border-radius:12px;padding:20px 24px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
 .page-header-left{display:flex;align-items:center;gap:16px}
-.page-header-icon{width:44px;height:44px;background:var(--bg-input);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
-.page-header h2{font-size:20px;font-weight:700;color:var(--text-primary)}
-.page-header p{font-size:13px;color:var(--text-muted)}
+.page-header-icon{width:44px;height:44px;background:var(--input);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--accent)}
+.page-header h2{font-size:20px;font-weight:700}
+.page-header p{font-size:13px;color:var(--muted)}
 .page-header-stat{text-align:right}
 .page-header-stat .num{font-size:28px;font-weight:800;color:var(--accent)}
-.page-header-stat .label{font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted)}
-.tab-panel{display:none}.tab-panel.active{display:block}
-.form-section{background:var(--bg-card);border-radius:12px;padding:24px;margin-bottom:24px;box-shadow:var(--card-shadow)}
-.form-section h3{font-size:15px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px;color:var(--text-primary)}
-.form-section h3 i{color:#e8a020}
+.page-header-stat .label{font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted)}
+
+/* Form */
+.form-section{background:var(--card);border-radius:12px;padding:24px;margin-bottom:24px;box-shadow:var(--shadow)}
+.form-section h3{font-size:15px;font-weight:600;margin-bottom:16px;display:flex;align-items:center;gap:8px;color:var(--text)}
+.form-section h3 i{color:var(--green)}
 .form-row{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-end}
-.form-group{display:flex;flex-direction:column;gap:6px;flex:1;min-width:160px}
-.form-group label{font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);font-weight:600}
-.form-group input,.form-group select{padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-input);color:var(--text-primary);font-size:13px;font-family:inherit}
-.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--accent)}
+.form-group{display:flex;flex-direction:column;gap:6px;flex:1;min-width:150px}
+.form-group label{font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);font-weight:600}
+.form-group input,.form-group select,.form-group textarea{padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--input);color:var(--text);font-size:13px;font-family:inherit}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--accent)}
 .btn{padding:10px 20px;border-radius:8px;border:none;cursor:pointer;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;transition:all 0.15s}
-.btn-submit{background:#e8a020;color:#1a1208}.btn-submit:hover{background:#f0b840}
-.btn-primary{background:var(--accent);color:#1a1208}.btn-primary:hover{background:var(--accent-light)}
-.btn-success{background:#e8a020;color:#1a1208}.btn-danger{background:#c07008;color:white}
-.btn-small{padding:5px 12px;font-size:11px}
+.btn-submit{background:#ff6b6b;color:white}.btn-submit:hover{background:#ff8e8e}
+.btn-success{background:var(--green);color:white}.btn-danger{background:var(--red);color:white}
+.btn-sm{padding:5px 12px;font-size:11px}
+
+/* KPI Cards */
 .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
-.kpi-card{background:var(--bg-card);border-radius:12px;padding:20px;box-shadow:var(--card-shadow);border-top:3px solid var(--accent)}
-.kpi-card.green{border-top-color:#e8a020}.kpi-card.orange{border-top-color:#d48a10}.kpi-card.red{border-top-color:#c07008}.kpi-card.yellow{border-top-color:#f0b840}
+.kpi-card{background:var(--card);border-radius:12px;padding:20px;box-shadow:var(--shadow);border-top:3px solid var(--accent)}
+.kpi-card.green{border-top-color:var(--green)}.kpi-card.orange{border-top-color:var(--orange)}.kpi-card.red{border-top-color:var(--red)}.kpi-card.yellow{border-top-color:var(--yellow)}
 .kpi-card .kpi-icon{font-size:24px;margin-bottom:10px}
-.kpi-card .kpi-num{font-size:32px;font-weight:800;color:var(--text-primary)}
-.kpi-card .kpi-label{font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-top:4px}
-.summary-section{background:var(--bg-card);border-radius:12px;padding:20px;margin-bottom:24px;box-shadow:var(--card-shadow)}
+.kpi-card .kpi-num{font-size:32px;font-weight:800}
+.kpi-card .kpi-label{font-size:10px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-top:4px}
+
+/* Summary */
+.summary-section{background:var(--card);border-radius:12px;padding:20px;margin-bottom:24px;box-shadow:var(--shadow)}
 .summary-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.summary-header h4{font-size:12px;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted)}
-.summary-header span{font-size:12px;color:var(--text-secondary)}
-.progress-bar{height:8px;border-radius:4px;background:var(--bg-input);overflow:hidden;display:flex;margin-bottom:10px}
+.summary-header h4{font-size:12px;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted)}
+.summary-header span{font-size:12px;color:var(--text2)}
+.progress-bar{height:8px;border-radius:4px;background:var(--input);overflow:hidden;display:flex;margin-bottom:10px}
 .progress-bar .seg{height:100%;transition:width 0.3s}
-.summary-legend{display:flex;gap:16px;font-size:12px;color:var(--text-secondary)}
+.summary-legend{display:flex;gap:16px;font-size:12px;color:var(--text2)}
 .legend-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle}
-.table-section{background:var(--bg-card);border-radius:12px;padding:20px;margin-bottom:24px;box-shadow:var(--card-shadow)}
+
+/* Table */
+.table-section{background:var(--card);border-radius:12px;padding:20px;margin-bottom:24px;box-shadow:var(--shadow)}
 .table-section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.table-section-header h3{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-secondary)}
-.search-input{padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-input);color:var(--text-primary);font-size:13px;width:220px}
+.table-section-header h3{font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--text2)}
+.search-input{padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--input);color:var(--text);font-size:13px;width:220px}
 .search-input:focus{outline:none;border-color:var(--accent)}
 table{width:100%;border-collapse:collapse;font-size:13px}
-th{text-align:left;padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:0.04em;color:var(--text-muted);font-weight:600;border-bottom:1px solid var(--border)}
-td{padding:10px 12px;border-bottom:1px solid rgba(58,44,30,0.5);color:var(--text-secondary)}
-tr:hover td{background:rgba(232,168,56,0.04)}
+th{text-align:left;padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);font-weight:600;border-bottom:1px solid var(--border)}
+td{padding:10px 12px;border-bottom:1px solid rgba(58,44,30,0.5);color:var(--text2)}
+tr:hover td{background:rgba(232,160,32,0.04)}
+
+/* Badges */
 .badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
-.b-present{background:rgba(232,160,32,0.15);color:#e8a020}.b-absent{background:rgba(192,112,8,0.15);color:#c07008}.b-leave{background:rgba(212,138,16,0.15);color:#d48a10}.b-wfh{background:rgba(240,184,64,0.15);color:#f0b840}.b-halfday{background:rgba(200,136,32,0.15);color:#c88820}.b-pending{background:rgba(232,160,32,0.15);color:#e8a020}.b-approved{background:rgba(240,184,64,0.15);color:#f0b840}.b-rejected{background:rgba(192,112,8,0.15);color:#c07008}
-.delete-btn{background:none;border:none;color:var(--red);cursor:pointer;opacity:0.5;font-size:13px}.delete-btn:hover{opacity:1}
-.empty-state{text-align:center;padding:30px;color:var(--text-muted);font-size:13px}
-.loading{text-align:center;padding:20px;color:var(--accent);font-size:13px}
-.manager-panel{background:var(--bg-card);border-radius:12px;padding:16px 20px;margin-bottom:20px;box-shadow:var(--card-shadow);border-left:3px solid var(--accent)}
+.b-present,.b-approved{background:rgba(76,175,80,0.15);color:var(--green)}
+.b-absent,.b-rejected{background:rgba(244,67,54,0.15);color:var(--red)}
+.b-leave,.b-pending{background:rgba(255,152,0,0.15);color:var(--orange)}
+.b-wfh{background:rgba(66,165,245,0.15);color:var(--blue)}
+.b-halfday{background:rgba(156,39,176,0.15);color:#ba68c8}
+
+/* Manager Panel */
+.manager-panel{background:var(--card);border-radius:12px;padding:16px 20px;margin-bottom:20px;box-shadow:var(--shadow);border-left:3px solid var(--accent)}
 .manager-login{display:flex;align-items:center;gap:12px}
-.manager-badge{background:var(--accent);color:#1a1208;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700}
-.toast{position:fixed;bottom:24px;right:24px;background:#e8a020;color:white;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:600;z-index:9999;opacity:0;transition:opacity 0.3s;box-shadow:0 4px 12px rgba(0,0,0,0.3)}.toast.show{opacity:1}.toast.error{background:var(--red)}
+.manager-badge{background:var(--accent);color:#1a1a1a;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700}
+
+/* Setup Banner */
+.setup-banner{background:var(--card);border:1px solid var(--accent);border-radius:12px;padding:20px;margin-bottom:20px;display:flex;align-items:flex-start;gap:12px}
+.setup-banner i{color:var(--accent);font-size:20px;margin-top:2px}
+
+/* Toast */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--accent);color:#1a1208;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:600;z-index:9999;opacity:0;transition:opacity 0.3s;box-shadow:0 4px 12px rgba(0,0,0,0.3)}.toast.show{opacity:1}.toast.error{background:var(--red);color:white}
+
+/* Empty state */
+.empty-state{text-align:center;padding:30px;color:var(--muted);font-size:13px}
+.delete-btn{background:none;border:none;color:var(--red);cursor:pointer;opacity:0.5;font-size:13px}.delete-btn:hover{opacity:1}
+
+/* Config Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;z-index:999}
+.modal{background:var(--card);border-radius:12px;padding:32px;max-width:500px;width:90%;box-shadow:var(--shadow);border:1px solid var(--border)}
+.modal h2{margin-bottom:16px;color:var(--text)}
+.modal textarea{width:100%;height:150px;font-family:monospace;font-size:12px;padding:12px;border:1px solid var(--border);border-radius:8px;margin-bottom:16px;background:var(--input);color:var(--text)}
+.hidden{display:none!important}
+
 @media(max-width:900px){.sidebar{display:none}.main{margin-left:0}.kpi-row{grid-template-columns:repeat(2,1fr)}.form-row{flex-direction:column}}
 </style>
 </head>
@@ -435,7 +469,7 @@ tr:hover td{background:rgba(232,168,56,0.04)}
   <div class="sidebar-logo">📊</div>
   <div class="sidebar-title">Team Neha Dashboard</div>
   <div class="sidebar-sub">ARI Operations | Mgr: Neha Agrawal</div>
-  <button class="theme-toggle" onclick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i> <span id="theme-label">Light Mode</span></button>
+  <button class="theme-toggle" onclick="toggleTheme()"><i class="fa-solid fa-circle-half-stroke"></i> <span id="themeLabel">Light Mode</span></button>
   <div class="nav-items">
     <div class="nav-item active" data-tab="attendance"><i class="fa-solid fa-clipboard-check"></i> Attendance</div>
     <div class="nav-item" data-tab="leave"><i class="fa-solid fa-calendar-days"></i> Leave Tracker</div>
@@ -443,82 +477,356 @@ tr:hover td{background:rgba(232,168,56,0.04)}
     <div class="nav-item" data-tab="shift"><i class="fa-solid fa-calendar-week"></i> Shift Schedule</div>
   </div>
   <div class="sidebar-clock">
-    <div class="clock-time" id="live-clock">00:00:00 PM</div>
-    <div class="clock-date" id="live-date"></div>
+    <div class="clock-time" id="liveClock">00:00:00 PM</div>
+    <div class="clock-date" id="liveDate"></div>
   </div>
 </div>
+
 <div class="main">
+
+
   <!-- ATTENDANCE -->
   <div class="tab-panel active" id="panel-attendance">
-    <div class="page-header"><div class="page-header-left"><div class="page-header-icon"><i class="fa-solid fa-clipboard-check" style="color:#e8a020"></i></div><div><h2>Attendance Tracker</h2><p>Daily team attendance management</p></div></div><div class="page-header-stat"><div class="num" id="att-count">0</div><div class="label">Entries Today</div></div></div>
+    <div class="page-header"><div class="page-header-left"><div class="page-header-icon"><i class="fa-solid fa-clipboard-check"></i></div><div><h2>Attendance Tracker</h2><p>Daily team attendance management</p></div></div><div class="page-header-stat"><div class="num" id="att-count">0</div><div class="label">Entries Today</div></div></div>
     <div class="form-section"><h3><i class="fa-solid fa-plus-circle"></i> Mark Attendance</h3><div class="form-row"><div class="form-group"><label>Employee Name</label><select id="att-name"></select></div><div class="form-group"><label>Status</label><select id="att-status"><option value="Present">Present</option><option value="Absent">Absent</option><option value="Half Day">Half Day</option><option value="WFH">WFH</option><option value="Leave">Leave</option></select></div><div class="form-group"><label>Check-in Time</label><input type="time" id="att-login"></div><div class="form-group"><label>Check-out Time</label><input type="time" id="att-logout"></div></div><div style="margin-top:16px"><button class="btn btn-submit" onclick="addAttendance()"><i class="fa-solid fa-check"></i> Submit</button></div></div>
-    <div class="kpi-row"><div class="kpi-card green"><div class="kpi-icon"><i class="fa-solid fa-user-check" style="color:#e8a020"></i></div><div class="kpi-num" id="kpi-present">0</div><div class="kpi-label">Present</div></div><div class="kpi-card orange"><div class="kpi-icon"><i class="fa-solid fa-plane-departure" style="color:#d48a10"></i></div><div class="kpi-num" id="kpi-leave">0</div><div class="kpi-label">On Leave</div></div><div class="kpi-card red"><div class="kpi-icon"><i class="fa-solid fa-user-xmark" style="color:#c07008"></i></div><div class="kpi-num" id="kpi-absent">0</div><div class="kpi-label">Absent</div></div><div class="kpi-card yellow"><div class="kpi-icon"><i class="fa-solid fa-users" style="color:#f0b840"></i></div><div class="kpi-num">20</div><div class="kpi-label">Total Team</div></div></div>
-    <div class="summary-section"><div class="summary-header"><h4>Attendance Summary</h4><span id="summary-text">100% Present | 0% Leave | 0% Absent</span></div><div class="progress-bar"><div class="seg" id="seg-present" style="width:100%;background:#e8a020"></div><div class="seg" id="seg-leave" style="width:0%;background:#d48a10"></div><div class="seg" id="seg-absent" style="width:0%;background:#c07008"></div></div><div class="summary-legend"><span><span class="legend-dot" style="background:#e8a020"></span>Present</span><span><span class="legend-dot" style="background:#d48a10"></span>Leave</span><span><span class="legend-dot" style="background:#c07008"></span>Absent</span></div></div>
-    <div class="table-section"><div class="table-section-header"><h3></h3><input type="text" class="search-input" id="att-search" placeholder="🔍 Search by name..." oninput="renderAttendance()"></div><div id="attendance-table"><div class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</div></div></div>
+    <div class="kpi-row"><div class="kpi-card green"><div class="kpi-icon" style="color:var(--accent)"><i class="fa-solid fa-user-check"></i></div><div class="kpi-num" id="kpi-present">0</div><div class="kpi-label">Present</div></div><div class="kpi-card orange"><div class="kpi-icon" style="color:var(--accent)"><i class="fa-solid fa-plane-departure"></i></div><div class="kpi-num" id="kpi-leave">0</div><div class="kpi-label">On Leave</div></div><div class="kpi-card red"><div class="kpi-icon" style="color:var(--accent)"><i class="fa-solid fa-user-xmark"></i></div><div class="kpi-num" id="kpi-absent">0</div><div class="kpi-label">Absent</div></div><div class="kpi-card yellow"><div class="kpi-icon" style="color:var(--accent)"><i class="fa-solid fa-users"></i></div><div class="kpi-num">20</div><div class="kpi-label">Total Team</div></div></div>
+    <div class="summary-section"><div class="summary-header"><h4>Attendance Summary</h4><span id="summaryText">100% Present | 0% Leave | 0% Absent</span></div><div class="progress-bar"><div class="seg" id="segPresent" style="width:100%;background:var(--green)"></div><div class="seg" id="segLeave" style="width:0%;background:var(--orange)"></div><div class="seg" id="segAbsent" style="width:0%;background:var(--red)"></div></div><div class="summary-legend"><span><span class="legend-dot" style="background:var(--green)"></span>Present</span><span><span class="legend-dot" style="background:var(--orange)"></span>Leave</span><span><span class="legend-dot" style="background:var(--red)"></span>Absent</span></div></div>
+    <div class="table-section"><div class="table-section-header"><h3>Records</h3><input type="text" class="search-input" id="att-search" placeholder="🔍 Search by name..." oninput="renderAttendance()"></div><div id="attendance-table"><div class="empty-state">No records yet</div></div></div>
   </div>
+
   <!-- LEAVE -->
   <div class="tab-panel" id="panel-leave">
-    <div class="page-header"><div class="page-header-left"><div class="page-header-icon"><i class="fa-solid fa-calendar-days" style="color:#d48a10"></i></div><div><h2>Leave Tracker</h2><p>Submit and manage leave requests</p></div></div><div class="page-header-stat"><div class="num" id="leave-count">0</div><div class="label">Total Requests</div></div></div>
-    <div class="manager-panel"><div id="manager-login-section"><p style="margin-bottom:10px;color:var(--text-muted);font-size:13px"><i class="fa-solid fa-lock"></i> Manager access required to approve/reject</p><div class="manager-login"><input type="password" id="manager-pin" placeholder="Enter Manager PIN" style="padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-input);color:var(--text-primary);font-size:13px"><button class="btn btn-primary" onclick="managerLogin()"><i class="fa-solid fa-sign-in-alt"></i> Login</button></div></div><div id="manager-logged-in" style="display:none"><span class="manager-badge"><i class="fa-solid fa-crown"></i> MANAGER MODE</span><span style="margin-left:12px;color:var(--text-secondary);font-size:13px">Neha Agrawal</span><button class="btn btn-small btn-danger" style="margin-left:12px" onclick="managerLogout()">Logout</button></div></div>
+    <div class="page-header"><div class="page-header-left"><div class="page-header-icon"><i class="fa-solid fa-calendar-days"></i></div><div><h2>Leave Tracker</h2><p>Submit and manage leave requests</p></div></div><div class="page-header-stat"><div class="num" id="leave-count">0</div><div class="label">Total Requests</div></div></div>
+    <div class="manager-panel"><div id="managerLoginSection"><p style="margin-bottom:10px;color:var(--muted);font-size:13px"><i class="fa-solid fa-lock"></i> Manager access required to approve/reject</p><div class="manager-login"><input type="password" id="managerPin" placeholder="Enter Manager PIN" style="padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--input);color:var(--text);font-size:13px"><button class="btn btn-submit" onclick="managerLogin()"><i class="fa-solid fa-sign-in-alt"></i> Login</button></div></div><div id="managerLoggedIn" class="hidden"><span class="manager-badge"><i class="fa-solid fa-crown"></i> MANAGER MODE</span><span style="margin-left:12px;color:var(--text2);font-size:13px">Neha Agrawal</span><button class="btn btn-sm btn-danger" style="margin-left:12px" onclick="managerLogout()">Logout</button></div></div>
     <div class="form-section"><h3><i class="fa-solid fa-plus-circle"></i> Submit Leave Request</h3><div class="form-row"><div class="form-group"><label>Employee Name</label><select id="leave-name"></select></div><div class="form-group"><label>Leave Type</label><select id="leave-type"><option value="CL">Casual Leave (CL)</option><option value="SL">Sick Leave (SL)</option><option value="PL">Privilege Leave (PL)</option><option value="Comp Off">Comp Off</option><option value="Emergency">Emergency</option></select></div><div class="form-group"><label>From Date</label><input type="date" id="leave-from"></div><div class="form-group"><label>To Date</label><input type="date" id="leave-to"></div></div><div class="form-row" style="margin-top:12px"><div class="form-group" style="flex:3"><label>Reason</label><input type="text" id="leave-reason" placeholder="Reason for leave"></div><div class="form-group" style="flex:0"><label>&nbsp;</label><button class="btn btn-submit" onclick="submitLeave()"><i class="fa-solid fa-paper-plane"></i> Submit</button></div></div></div>
-    <div class="kpi-row" id="leave-kpis"></div>
-    <div class="table-section"><div class="table-section-header"><h3>Leave Requests</h3></div><div id="leave-table"><div class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</div></div></div>
+    <div class="kpi-row" id="leaveKpis"><div class="kpi-card green"><div class="kpi-icon" style="color:var(--accent)"><i class="fa-solid fa-check-circle"></i></div><div class="kpi-num" id="kpi-approved">0</div><div class="kpi-label">Approved</div></div><div class="kpi-card orange"><div class="kpi-icon" style="color:var(--accent)"><i class="fa-solid fa-hourglass-half"></i></div><div class="kpi-num" id="kpi-pending">0</div><div class="kpi-label">Pending</div></div><div class="kpi-card red"><div class="kpi-icon" style="color:var(--accent)"><i class="fa-solid fa-times-circle"></i></div><div class="kpi-num" id="kpi-rejected">0</div><div class="kpi-label">Rejected</div></div><div class="kpi-card yellow"><div class="kpi-icon" style="color:var(--accent)"><i class="fa-solid fa-list"></i></div><div class="kpi-num" id="kpi-totalLeaves">0</div><div class="kpi-label">Total</div></div></div>
+    <div class="table-section"><div class="table-section-header"><h3>Leave Requests</h3></div><div id="leave-table"><div class="empty-state">No leave requests yet</div></div></div>
   </div>
+
   <!-- OT -->
   <div class="tab-panel" id="panel-ot">
-    <div class="page-header"><div class="page-header-left"><div class="page-header-icon"><i class="fa-solid fa-clock" style="color:#f0b840"></i></div><div><h2>OT Tracker</h2><p>Log and track overtime hours</p></div></div><div class="page-header-stat"><div class="num" id="ot-total-hours">0</div><div class="label">Total OT Hours</div></div></div>
+    <div class="page-header"><div class="page-header-left"><div class="page-header-icon"><i class="fa-solid fa-clock"></i></div><div><h2>OT Tracker</h2><p>Log and track overtime hours</p></div></div><div class="page-header-stat"><div class="num" id="ot-total-hours">0</div><div class="label">Total OT Hours</div></div></div>
     <div class="form-section"><h3><i class="fa-solid fa-plus-circle"></i> Log Overtime</h3><div class="form-row"><div class="form-group"><label>Employee Name</label><select id="ot-name"></select></div><div class="form-group"><label>Date</label><input type="date" id="ot-date"></div><div class="form-group"><label>OT Hours</label><input type="number" id="ot-hours" min="0" step="0.5" placeholder="e.g. 2.5"></div><div class="form-group"><label>Reason</label><input type="text" id="ot-reason" placeholder="Reason for OT"></div></div><div style="margin-top:16px"><button class="btn btn-submit" onclick="addOT()"><i class="fa-solid fa-check"></i> Submit</button></div></div>
-    <div class="kpi-row" id="ot-kpis"></div>
-    <div class="table-section"><div class="table-section-header"><h3>OT Records</h3></div><div id="ot-table"><div class="loading"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</div></div></div>
+    <div class="kpi-row" id="otKpis"><div class="kpi-card yellow"><div class="kpi-icon" style="color:var(--accent)"><i class="fa-solid fa-clock"></i></div><div class="kpi-num" id="kpi-otHours">0h</div><div class="kpi-label">Total Hours</div></div><div class="kpi-card green"><div class="kpi-icon" style="color:var(--accent)"><i class="fa-solid fa-list"></i></div><div class="kpi-num" id="kpi-otEntries">0</div><div class="kpi-label">Entries</div></div><div class="kpi-card orange"><div class="kpi-icon" style="color:var(--accent)"><i class="fa-solid fa-chart-line"></i></div><div class="kpi-num" id="kpi-otAvg">0</div><div class="kpi-label">Avg Hours</div></div></div>
+    <div class="table-section"><div class="table-section-header"><h3>OT Records</h3></div><div id="ot-table"><div class="empty-state">No OT records yet</div></div></div>
   </div>
-  <!-- SHIFT -->
+
+  <!-- SHIFT SCHEDULE -->
   <div class="tab-panel" id="panel-shift">
-    <div class="page-header"><div class="page-header-left"><div class="page-header-icon"><i class="fa-solid fa-calendar-week" style="color:#e8a020"></i></div><div><h2>Shift Schedule</h2><p>Weekly shift assignments</p></div></div></div>
+    <div class="page-header"><div class="page-header-left"><div class="page-header-icon"><i class="fa-solid fa-calendar-week"></i></div><div><h2>Shift Schedule</h2><p>Weekly shift assignments</p></div></div></div>
     <div class="table-section"><div class="empty-state"><i class="fa-solid fa-calendar-week" style="font-size:36px;display:block;margin-bottom:10px;opacity:0.4"></i>Shift schedule coming soon</div></div>
   </div>
 </div>
+
+
+
 <div class="toast" id="toast"></div>
+
 <script>
-var API_URL='https://script.google.com/macros/s/AKfycbyk6uiwcgtReUnmyW5vAiNtp1NjyiKBSVto9TReVFmjI-ynM5UCNGANVcOFOkNs9Qya/exec';
-var MANAGER_PIN='neha2026';
-var isManagerLoggedIn=false;
-var attData=[],leaveData=[],otData=[];
-var teamMembers=['Anusha Vaddi','Aishwarya Rajesh','Ajay Sabbani','Asad Imroze','Irfan Basha Shaik','Jaydeep Guha','Kaushik Pal C M','Laiba Nasim','Mahesh Pakalapati','Mohammed Shaarif Hussain','Nada Haleem','Prashant Khanka','Rishi Gupta','Sangeeta Shukla','Shubham Bhatt','Sushma Maddi','Syed Asim Ali','Thilagaraj Selvaraj','Venkateswar Reddy Abbavaram','Neha Agrawal'];
-function populateDropdowns(){['att-name','leave-name','ot-name'].forEach(function(id){var el=document.getElementById(id);el.innerHTML='<option value="">Select employee...</option>';teamMembers.forEach(function(n){el.innerHTML+='<option value="'+n+'">'+n+'</option>'});})}
+// ===== CONFIG =====
+var MANAGER_PIN = 'neha2026';
+var isManager = false;
+var db = null;
+var teamMembers = ['Anusha Vaddi','Aishwarya Rajesh','Ajay Sabbani','Asad Imroze','Irfan Basha Shaik','Jaydeep Guha','Kaushik Pal C M','Laiba Nasim','Mahesh Pakalapati','Mohammed Shaarif Hussain','Nada Haleem','Prashant Khanka','Rishi Gupta','Sangeeta Shukla','Shubham Bhatt','Sushma Maddi','Syed Asim Ali','Thilagaraj Selvaraj','Venkateswar Reddy Abbavaram','Neha Agrawal'];
+var attData = [], leaveData = [], otData = [];
+var today = new Date().toISOString().split('T')[0];
+
+// ===== FIREBASE DYNAMIC LOAD =====
+function loadFirebaseSDK(callback) {
+  if (typeof firebase !== 'undefined') { callback(); return; }
+  var s1 = document.createElement('script');
+  s1.src = 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js';
+  s1.onload = function() {
+    var s2 = document.createElement('script');
+    s2.src = 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js';
+    s2.onload = callback;
+    s2.onerror = function() { console.log('Firebase Firestore SDK failed to load'); };
+    document.head.appendChild(s2);
+  };
+  s1.onerror = function() { console.log('Firebase SDK failed to load - preview mode'); };
+  document.head.appendChild(s1);
+}
+
+var FIREBASE_CONFIG = {
+  apiKey: "AIzaSyBNSO8f3nVcjx4_FWArTWTt1ndMX6me1iA",
+  authDomain: "team-neha-tracker.firebaseapp.com",
+  projectId: "team-neha-tracker",
+  storageBucket: "team-neha-tracker.firebasestorage.app",
+  messagingSenderId: "213269889520",
+  appId: "1:213269889520:web:89b93344f9c7269f0ddd35"
+};
+
+function initFirebase(config) {
+  if (typeof firebase === 'undefined') { showToast('Firebase SDK not loaded. Works on live link only.', true); return false; }
+  try {
+    if (!firebase.apps.length) firebase.initializeApp(config);
+    db = firebase.firestore();
+    showToast('Firebase connected!');
+    loadAllData();
+    return true;
+  } catch(e) { showToast('Error: ' + e.message, true); return false; }
+}
+
+loadFirebaseSDK(function() {
+  initFirebase(FIREBASE_CONFIG);
+});
+
+// ===== POPULATE DROPDOWNS =====
+function populateDropdowns() {
+  ['att-name','leave-name','ot-name'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.innerHTML = '<option value="">Select employee...</option>';
+    teamMembers.forEach(function(n) { el.innerHTML += '<option value="'+n+'">'+n+'</option>'; });
+  });
+}
 populateDropdowns();
-var today=new Date().toISOString().split('T')[0];
-document.getElementById('ot-date').value=today;
-document.getElementById('leave-from').value=today;
-document.getElementById('leave-to').value=today;
-function updateClock(){var now=new Date();document.getElementById('live-clock').textContent=now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true}).toUpperCase();document.getElementById('live-date').textContent=now.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'short',year:'numeric'})}
-updateClock();setInterval(updateClock,1000);
-function toggleTheme(){document.body.classList.toggle('light');document.getElementById('theme-label').textContent=document.body.classList.contains('light')?'Dark Mode':'Light Mode'}
-document.querySelectorAll('.nav-item').forEach(function(item){item.addEventListener('click',function(){document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active')});document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});item.classList.add('active');document.getElementById('panel-'+item.dataset.tab).classList.add('active')})});
-function apiCall(params,cb){var isRead=(params.action==='getAll');if(isRead){var url=API_URL+'?'+Object.keys(params).map(function(k){return k+'='+encodeURIComponent(params[k])}).join('&');fetch(url,{redirect:'follow'}).then(function(r){return r.text()}).then(function(t){try{var d=JSON.parse(t);cb(d)}catch(e){console.error('Parse error:',t);cb({success:false})}}).catch(function(e){showToast('Error: '+e.message,true);cb({success:false})})}else{fetch(API_URL,{method:'POST',redirect:'follow',headers:{'Content-Type':'text/plain'},body:JSON.stringify(params)}).then(function(r){return r.text()}).then(function(t){try{var d=JSON.parse(t);cb(d)}catch(e){console.error('Parse error:',t);cb({success:false})}}).catch(function(e){showToast('Error: '+e.message,true);cb({success:false})})}}
-function showToast(msg,err){var t=document.getElementById('toast');t.textContent=msg;t.className='toast show'+(err?' error':'');setTimeout(function(){t.className='toast'},3000)}
-function formatDate(d){if(!d)return'—';var dt=new Date(d);if(isNaN(dt))return d;return dt.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})}
-// ATTENDANCE
-function addAttendance(){var name=document.getElementById('att-name').value;var status=document.getElementById('att-status').value;var login=document.getElementById('att-login').value;var logout=document.getElementById('att-logout').value;if(!name){alert('Please select an employee');return}apiCall({action:'add',sheet:'Attendance',name:name,date:today,status:status,login:login,logout:logout},function(r){if(r.success){showToast('Attendance logged!');loadAttendance()}else showToast('Failed',true)});document.getElementById('att-name').value='';document.getElementById('att-login').value='';document.getElementById('att-logout').value=''}
-function deleteAttendance(id){apiCall({action:'delete',sheet:'Attendance',id:id},function(r){if(r.success){showToast('Deleted');loadAttendance()}})}
-function loadAttendance(){apiCall({action:'getAll',sheet:'Attendance'},function(r){attData=(r.success&&r.data)?r.data:[];renderAttendance()})}
-function renderAttendance(){var search=(document.getElementById('att-search').value||'').toLowerCase();var records=attData;if(search)records=records.filter(function(r){return(r.name||'').toLowerCase().indexOf(search)>-1});var todayRec=records.filter(function(r){return r.date===today});var present=todayRec.filter(function(r){return r.status==='Present'||r.status==='WFH'}).length;var absent=todayRec.filter(function(r){return r.status==='Absent'}).length;var onLeave=todayRec.filter(function(r){return r.status==='Leave'||r.status==='Half Day'}).length;document.getElementById('kpi-present').textContent=present;document.getElementById('kpi-absent').textContent=absent;document.getElementById('kpi-leave').textContent=onLeave;document.getElementById('att-count').textContent=todayRec.length;var total=present+absent+onLeave||1;var pP=Math.round(present/total*100),pL=Math.round(onLeave/total*100),pA=Math.round(absent/total*100);document.getElementById('seg-present').style.width=pP+'%';document.getElementById('seg-present').style.background='#e8a020';document.getElementById('seg-leave').style.width=pL+'%';document.getElementById('seg-absent').style.width=pA+'%';document.getElementById('summary-text').textContent=pP+'% Present | '+pL+'% Leave | '+pA+'% Absent';var container=document.getElementById('attendance-table');if(records.length===0){container.innerHTML='<div class="empty-state">No records yet</div>';return}var html='<table><thead><tr><th>#</th><th>Name</th><th>Date</th><th>Status</th><th>Check-in</th><th>Check-out</th><th></th></tr></thead><tbody>';records.slice().reverse().forEach(function(r,i){var cls=r.status==='Present'?'b-present':r.status==='Absent'?'b-absent':r.status==='WFH'?'b-wfh':r.status==='Leave'?'b-leave':'b-halfday';html+='<tr><td>'+(i+1)+'</td><td><strong>'+r.name+'</strong></td><td>'+formatDate(r.date)+'</td><td><span class="badge '+cls+'">'+r.status+'</span></td><td>'+(r.login||'—')+'</td><td>'+(r.logout||'—')+'</td><td><button class="delete-btn" onclick="deleteAttendance(\''+r.id+'\')"><i class="fa-solid fa-trash"></i></button></td></tr>'});html+='</tbody></table>';container.innerHTML=html}
-// OT
-function addOT(){var name=document.getElementById('ot-name').value;var date=document.getElementById('ot-date').value;var hours=document.getElementById('ot-hours').value;var reason=document.getElementById('ot-reason').value;if(!name||!hours){alert('Please select employee and enter hours');return}apiCall({action:'add',sheet:'OT',name:name,date:date,hours:hours,reason:reason},function(r){if(r.success){showToast('OT logged!');loadOT()}else showToast('Failed',true)});document.getElementById('ot-name').value='';document.getElementById('ot-hours').value='';document.getElementById('ot-reason').value=''}
-function deleteOT(id){apiCall({action:'delete',sheet:'OT',id:id},function(r){if(r.success){showToast('Deleted');loadOT()}})}
-function loadOT(){apiCall({action:'getAll',sheet:'OT'},function(r){otData=(r.success&&r.data)?r.data:[];renderOT()})}
-function renderOT(){var records=otData;var totalH=records.reduce(function(s,r){return s+parseFloat(r.hours||0)},0);document.getElementById('ot-total-hours').textContent=totalH;document.getElementById('ot-kpis').innerHTML='<div class="kpi-card yellow"><div class="kpi-icon"><i class="fa-solid fa-clock" style="color:#f0b840"></i></div><div class="kpi-num">'+totalH+'h</div><div class="kpi-label">Total Hours</div></div><div class="kpi-card green"><div class="kpi-icon"><i class="fa-solid fa-list" style="color:#e8a020"></i></div><div class="kpi-num">'+records.length+'</div><div class="kpi-label">Entries</div></div><div class="kpi-card orange"><div class="kpi-icon"><i class="fa-solid fa-chart-line" style="color:#d48a10"></i></div><div class="kpi-num">'+(records.length?(totalH/records.length).toFixed(1):0)+'</div><div class="kpi-label">Avg Hours</div></div>';var container=document.getElementById('ot-table');if(records.length===0){container.innerHTML='<div class="empty-state">No OT records yet</div>';return}var html='<table><thead><tr><th>#</th><th>Name</th><th>Date</th><th>Hours</th><th>Reason</th><th></th></tr></thead><tbody>';records.slice().reverse().forEach(function(r,i){html+='<tr><td>'+(i+1)+'</td><td><strong>'+r.name+'</strong></td><td>'+formatDate(r.date)+'</td><td><strong style="color:#e8a020">'+r.hours+'h</strong></td><td>'+(r.reason||'—')+'</td><td><button class="delete-btn" onclick="deleteOT(\''+r.id+'\')"><i class="fa-solid fa-trash"></i></button></td></tr>'});html+='</tbody></table>';container.innerHTML=html}
-// LEAVE
-function submitLeave(){var name=document.getElementById('leave-name').value;var type=document.getElementById('leave-type').value;var fromDate=document.getElementById('leave-from').value;var toDate=document.getElementById('leave-to').value;var reason=document.getElementById('leave-reason').value;if(!name||!fromDate||!toDate){alert('Please fill required fields');return}apiCall({action:'add',sheet:'Leaves',name:name,type:type,fromDate:fromDate,toDate:toDate,reason:reason,status:'Pending'},function(r){if(r.success){showToast('Leave request submitted!');loadLeaves()}else showToast('Failed',true)});document.getElementById('leave-name').value='';document.getElementById('leave-reason').value=''}
-function approveLeave(id){if(!isManagerLoggedIn)return;apiCall({action:'update',sheet:'Leaves',id:id,status:'Approved'},function(r){if(r.success){showToast('Approved!');loadLeaves()}})}
-function rejectLeave(id){if(!isManagerLoggedIn)return;apiCall({action:'update',sheet:'Leaves',id:id,status:'Rejected'},function(r){if(r.success){showToast('Rejected');loadLeaves()}})}
-function deleteLeave(id){apiCall({action:'delete',sheet:'Leaves',id:id},function(r){if(r.success){showToast('Deleted');loadLeaves()}})}
-function loadLeaves(){apiCall({action:'getAll',sheet:'Leaves'},function(r){leaveData=(r.success&&r.data)?r.data:[];renderLeaves()})}
-function renderLeaves(){var records=leaveData;var approved=records.filter(function(r){return r.status==='Approved'}).length;var pending=records.filter(function(r){return r.status==='Pending'}).length;var rejected=records.filter(function(r){return r.status==='Rejected'}).length;document.getElementById('leave-count').textContent=records.length;document.getElementById('leave-kpis').innerHTML='<div class="kpi-card green"><div class="kpi-icon"><i class="fa-solid fa-check-circle" style="color:#e8a020"></i></div><div class="kpi-num">'+approved+'</div><div class="kpi-label">Approved</div></div><div class="kpi-card orange"><div class="kpi-icon"><i class="fa-solid fa-hourglass-half" style="color:#d48a10"></i></div><div class="kpi-num">'+pending+'</div><div class="kpi-label">Pending</div></div><div class="kpi-card red"><div class="kpi-icon"><i class="fa-solid fa-times-circle" style="color:#c07008"></i></div><div class="kpi-num">'+rejected+'</div><div class="kpi-label">Rejected</div></div><div class="kpi-card yellow"><div class="kpi-icon"><i class="fa-solid fa-list" style="color:#f0b840"></i></div><div class="kpi-num">'+records.length+'</div><div class="kpi-label">Total</div></div>';var container=document.getElementById('leave-table');if(records.length===0){container.innerHTML='<div class="empty-state">No leave requests yet</div>';return}var html='<table><thead><tr><th>#</th><th>Name</th><th>Type</th><th>From</th><th>To</th><th>Reason</th><th>Status</th>';if(isManagerLoggedIn)html+='<th>Action</th>';html+='<th></th></tr></thead><tbody>';records.slice().reverse().forEach(function(r,i){var cls=r.status==='Approved'?'b-approved':r.status==='Rejected'?'b-rejected':'b-pending';html+='<tr><td>'+(i+1)+'</td><td><strong>'+r.name+'</strong></td><td>'+r.type+'</td><td>'+formatDate(r.fromDate)+'</td><td>'+formatDate(r.toDate)+'</td><td>'+(r.reason||'—')+'</td><td><span class="badge '+cls+'">'+r.status+'</span></td>';if(isManagerLoggedIn){if(r.status==='Pending'){html+='<td><button class="btn btn-small btn-success" onclick="approveLeave(\''+r.id+'\')"><i class="fa-solid fa-check"></i></button> <button class="btn btn-small btn-danger" onclick="rejectLeave(\''+r.id+'\')"><i class="fa-solid fa-times"></i></button></td>'}else{html+='<td style="color:var(--text-muted);font-size:11px">—</td>'}}html+='<td><button class="delete-btn" onclick="deleteLeave(\''+r.id+'\')"><i class="fa-solid fa-trash"></i></button></td></tr>'});html+='</tbody></table>';container.innerHTML=html}
-// MANAGER
-function managerLogin(){if(document.getElementById('manager-pin').value===MANAGER_PIN){isManagerLoggedIn=true;document.getElementById('manager-login-section').style.display='none';document.getElementById('manager-logged-in').style.display='block';renderLeaves()}else alert('Incorrect PIN!')}
-function managerLogout(){isManagerLoggedIn=false;document.getElementById('manager-login-section').style.display='block';document.getElementById('manager-logged-in').style.display='none';document.getElementById('manager-pin').value='';renderLeaves()}
-// INIT
-loadAttendance();loadOT();loadLeaves();
+
+// Set defaults
+try {
+  document.getElementById('ot-date').value = today;
+  document.getElementById('leave-from').value = today;
+  document.getElementById('leave-to').value = today;
+} catch(e){}
+
+// ===== CLOCK =====
+function updateClock() {
+  var now = new Date();
+  document.getElementById('liveClock').textContent = now.toLocaleTimeString('en-IN',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true}).toUpperCase();
+  document.getElementById('liveDate').textContent = now.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'short',year:'numeric'});
+}
+updateClock(); setInterval(updateClock, 1000);
+
+// ===== THEME =====
+function toggleTheme() { document.body.classList.toggle('light'); document.getElementById('themeLabel').textContent = document.body.classList.contains('light') ? 'Dark Mode' : 'Light Mode'; }
+
+// ===== NAVIGATION =====
+document.querySelectorAll('.nav-item').forEach(function(item) {
+  item.addEventListener('click', function() {
+    document.querySelectorAll('.nav-item').forEach(function(n){n.classList.remove('active')});
+    document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});
+    item.classList.add('active');
+    document.getElementById('panel-'+item.dataset.tab).classList.add('active');
+  });
+});
+
+// ===== DATA OPERATIONS =====
+function generateId() { return Date.now().toString(36) + Math.random().toString(36).substr(2, 5); }
+
+function loadAllData() {
+  if (!db) return;
+  loadAttendance(); loadLeaves(); loadOT();
+}
+
+// -- ATTENDANCE --
+function addAttendance() {
+  var name = document.getElementById('att-name').value;
+  var status = document.getElementById('att-status').value;
+  var login = document.getElementById('att-login').value;
+  var logout = document.getElementById('att-logout').value;
+  if (!name) { alert('Please select an employee'); return; }
+  var record = { id: generateId(), name: name, date: today, status: status, login: login || '', logout: logout || '', createdAt: new Date().toISOString() };
+  if (db) {
+    db.collection('attendance').add(record).then(function() { showToast('Attendance logged!'); loadAttendance(); }).catch(function(e) { showToast('Error: '+e.message, true); });
+  } else {
+    attData.push(record); renderAttendance(); showToast('Saved locally (connect Firebase for permanent storage)');
+  }
+  document.getElementById('att-name').value = '';
+  document.getElementById('att-login').value = '';
+  document.getElementById('att-logout').value = '';
+}
+
+function loadAttendance() {
+  if (!db) { renderAttendance(); return; }
+  db.collection('attendance').orderBy('createdAt','desc').get().then(function(snap) {
+    attData = []; snap.forEach(function(doc) { var d = doc.data(); d._docId = doc.id; attData.push(d); });
+    renderAttendance();
+  });
+}
+
+function deleteAttendance(docId) {
+  if (!db) { attData = attData.filter(function(r){return r.id !== docId}); renderAttendance(); return; }
+  db.collection('attendance').doc(docId).delete().then(function() { showToast('Deleted'); loadAttendance(); });
+}
+
+function renderAttendance() {
+  var search = (document.getElementById('att-search').value || '').toLowerCase();
+  var records = attData;
+  if (search) records = records.filter(function(r){return (r.name||'').toLowerCase().indexOf(search) > -1});
+  var todayRec = records.filter(function(r){return r.date === today});
+  var present = todayRec.filter(function(r){return r.status==='Present'||r.status==='WFH'}).length;
+  var absent = todayRec.filter(function(r){return r.status==='Absent'}).length;
+  var onLeave = todayRec.filter(function(r){return r.status==='Leave'||r.status==='Half Day'}).length;
+  document.getElementById('kpi-present').textContent = present;
+  document.getElementById('kpi-absent').textContent = absent;
+  document.getElementById('kpi-leave').textContent = onLeave;
+  document.getElementById('att-count').textContent = todayRec.length;
+  var total = present+absent+onLeave||1;
+  var pP=Math.round(present/total*100), pL=Math.round(onLeave/total*100), pA=Math.round(absent/total*100);
+  document.getElementById('segPresent').style.width=pP+'%';
+  document.getElementById('segLeave').style.width=pL+'%';
+  document.getElementById('segAbsent').style.width=pA+'%';
+  document.getElementById('summaryText').textContent=pP+'% Present | '+pL+'% Leave | '+pA+'% Absent';
+  var container = document.getElementById('attendance-table');
+  if (records.length === 0) { container.innerHTML = '<div class="empty-state">No records yet</div>'; return; }
+  var html = '<table><thead><tr><th>#</th><th>Name</th><th>Date</th><th>Status</th><th>Check-in</th><th>Check-out</th><th></th></tr></thead><tbody>';
+  records.forEach(function(r,i) {
+    var cls = r.status==='Present'?'b-present':r.status==='Absent'?'b-absent':r.status==='WFH'?'b-wfh':r.status==='Leave'?'b-leave':'b-halfday';
+    html += '<tr><td>'+(i+1)+'</td><td><strong>'+r.name+'</strong></td><td>'+r.date+'</td><td><span class="badge '+cls+'">'+r.status+'</span></td><td>'+(r.login||'—')+'</td><td>'+(r.logout||'—')+'</td><td><button class="delete-btn" onclick="deleteAttendance(\''+(r._docId||r.id)+'\')"><i class="fa-solid fa-trash"></i></button></td></tr>';
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+// -- LEAVES --
+function submitLeave() {
+  var name = document.getElementById('leave-name').value;
+  var type = document.getElementById('leave-type').value;
+  var fromDate = document.getElementById('leave-from').value;
+  var toDate = document.getElementById('leave-to').value;
+  var reason = document.getElementById('leave-reason').value;
+  if (!name||!fromDate||!toDate) { alert('Please fill required fields'); return; }
+  var record = { id: generateId(), name: name, type: type, fromDate: fromDate, toDate: toDate, reason: reason, status: 'Pending', createdAt: new Date().toISOString() };
+  if (db) {
+    db.collection('leaves').add(record).then(function() { showToast('Leave request submitted!'); loadLeaves(); }).catch(function(e) { showToast('Error: '+e.message, true); });
+  } else {
+    leaveData.push(record); renderLeaves(); showToast('Saved locally');
+  }
+  document.getElementById('leave-name').value = '';
+  document.getElementById('leave-reason').value = '';
+}
+
+function loadLeaves() {
+  if (!db) { renderLeaves(); return; }
+  db.collection('leaves').orderBy('createdAt','desc').get().then(function(snap) {
+    leaveData = []; snap.forEach(function(doc) { var d = doc.data(); d._docId = doc.id; leaveData.push(d); });
+    renderLeaves();
+  });
+}
+
+function approveLeave(docId) {
+  if (!isManager) return;
+  if (db) { db.collection('leaves').doc(docId).update({status:'Approved'}).then(function(){showToast('Approved!');loadLeaves();}); }
+  else { leaveData.forEach(function(r){if(r.id===docId)r.status='Approved'}); renderLeaves(); showToast('Approved!'); }
+}
+
+function rejectLeave(docId) {
+  if (!isManager) return;
+  if (db) { db.collection('leaves').doc(docId).update({status:'Rejected'}).then(function(){showToast('Rejected');loadLeaves();}); }
+  else { leaveData.forEach(function(r){if(r.id===docId)r.status='Rejected'}); renderLeaves(); showToast('Rejected'); }
+}
+
+function deleteLeave(docId) {
+  if (db) { db.collection('leaves').doc(docId).delete().then(function(){showToast('Deleted');loadLeaves();}); }
+  else { leaveData = leaveData.filter(function(r){return r.id!==docId}); renderLeaves(); }
+}
+
+function renderLeaves() {
+  var records = leaveData;
+  var approved = records.filter(function(r){return r.status==='Approved'}).length;
+  var pending = records.filter(function(r){return r.status==='Pending'}).length;
+  var rejected = records.filter(function(r){return r.status==='Rejected'}).length;
+  document.getElementById('leave-count').textContent = records.length;
+  document.getElementById('kpi-approved').textContent = approved;
+  document.getElementById('kpi-pending').textContent = pending;
+  document.getElementById('kpi-rejected').textContent = rejected;
+  document.getElementById('kpi-totalLeaves').textContent = records.length;
+  var container = document.getElementById('leave-table');
+  if (records.length===0) { container.innerHTML='<div class="empty-state">No leave requests yet</div>'; return; }
+  var html = '<table><thead><tr><th>#</th><th>Name</th><th>Type</th><th>From</th><th>To</th><th>Reason</th><th>Status</th>';
+  if (isManager) html += '<th>Action</th>';
+  html += '<th></th></tr></thead><tbody>';
+  records.forEach(function(r,i) {
+    var cls = r.status==='Approved'?'b-approved':r.status==='Rejected'?'b-rejected':'b-pending';
+    var docId = r._docId || r.id;
+    html += '<tr><td>'+(i+1)+'</td><td><strong>'+r.name+'</strong></td><td>'+r.type+'</td><td>'+r.fromDate+'</td><td>'+r.toDate+'</td><td>'+(r.reason||'—')+'</td><td><span class="badge '+cls+'">'+r.status+'</span></td>';
+    if (isManager) {
+      if (r.status==='Pending') { html += '<td><button class="btn btn-sm btn-success" onclick="approveLeave(\''+docId+'\')"><i class="fa-solid fa-check"></i></button> <button class="btn btn-sm btn-danger" onclick="rejectLeave(\''+docId+'\')"><i class="fa-solid fa-times"></i></button></td>'; }
+      else { html += '<td style="color:var(--muted)">—</td>'; }
+    }
+    html += '<td><button class="delete-btn" onclick="deleteLeave(\''+docId+'\')"><i class="fa-solid fa-trash"></i></button></td></tr>';
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+// -- OT --
+function addOT() {
+  var name = document.getElementById('ot-name').value;
+  var date = document.getElementById('ot-date').value;
+  var hours = document.getElementById('ot-hours').value;
+  var reason = document.getElementById('ot-reason').value;
+  if (!name||!hours) { alert('Please select employee and enter hours'); return; }
+  var record = { id: generateId(), name: name, date: date, hours: parseFloat(hours), reason: reason, createdAt: new Date().toISOString() };
+  if (db) {
+    db.collection('overtime').add(record).then(function() { showToast('OT logged!'); loadOT(); }).catch(function(e) { showToast('Error: '+e.message, true); });
+  } else {
+    otData.push(record); renderOT(); showToast('Saved locally');
+  }
+  document.getElementById('ot-name').value = '';
+  document.getElementById('ot-hours').value = '';
+  document.getElementById('ot-reason').value = '';
+}
+
+function loadOT() {
+  if (!db) { renderOT(); return; }
+  db.collection('overtime').orderBy('createdAt','desc').get().then(function(snap) {
+    otData = []; snap.forEach(function(doc) { var d = doc.data(); d._docId = doc.id; otData.push(d); });
+    renderOT();
+  });
+}
+
+function deleteOT(docId) {
+  if (db) { db.collection('overtime').doc(docId).delete().then(function(){showToast('Deleted');loadOT();}); }
+  else { otData = otData.filter(function(r){return r.id!==docId}); renderOT(); }
+}
+
+function renderOT() {
+  var records = otData;
+  var totalH = records.reduce(function(s,r){return s+(r.hours||0)},0);
+  document.getElementById('ot-total-hours').textContent = totalH;
+  document.getElementById('kpi-otHours').textContent = totalH + 'h';
+  document.getElementById('kpi-otEntries').textContent = records.length;
+  document.getElementById('kpi-otAvg').textContent = records.length ? (totalH/records.length).toFixed(1) : '0';
+  var container = document.getElementById('ot-table');
+  if (records.length===0) { container.innerHTML='<div class="empty-state">No OT records yet</div>'; return; }
+  var html = '<table><thead><tr><th>#</th><th>Name</th><th>Date</th><th>Hours</th><th>Reason</th><th></th></tr></thead><tbody>';
+  records.forEach(function(r,i) {
+    var docId = r._docId || r.id;
+    html += '<tr><td>'+(i+1)+'</td><td><strong>'+r.name+'</strong></td><td>'+r.date+'</td><td><strong style="color:var(--accent)">'+r.hours+'h</strong></td><td>'+(r.reason||'—')+'</td><td><button class="delete-btn" onclick="deleteOT(\''+docId+'\')"><i class="fa-solid fa-trash"></i></button></td></tr>';
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+// ===== MANAGER LOGIN =====
+function managerLogin() {
+  if (document.getElementById('managerPin').value === MANAGER_PIN) {
+    isManager = true;
+    document.getElementById('managerLoginSection').classList.add('hidden');
+    document.getElementById('managerLoggedIn').classList.remove('hidden');
+    renderLeaves();
+  } else { alert('Incorrect PIN!'); }
+}
+function managerLogout() {
+  isManager = false;
+  document.getElementById('managerLoginSection').classList.remove('hidden');
+  document.getElementById('managerLoggedIn').classList.add('hidden');
+  document.getElementById('managerPin').value = '';
+  renderLeaves();
+}
+
+// ===== HELPERS =====
+function showToast(msg, err) {
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.className = 'toast show' + (err ? ' error' : '');
+  setTimeout(function(){t.className='toast'},3000);
+}
+
+
+
+// Init renders
+renderAttendance(); renderLeaves(); renderOT();
 </script>
 
 
